@@ -1,0 +1,81 @@
+*{margin:0; padding:0; font-size:100%; font-weight:normal; vertical-align:baseline; background:transparent; border:none;}
+
+body{
+	background: White;
+	color: Black;
+	text-align: left;
+	font-family: 'Source Code Pro', monospace;
+	line-height: 1.5em;
+	width: 482px;
+	padding: 20px 40px;
+	margin: auto;
+}
+
+h1, h2, h3, p, ul, li, a{
+	font-weight: normal;
+}
+
+h1{
+	font-size: 150%;
+}
+
+h2{
+	font-size: 125%;
+}
+
+p{
+	font-size: 100%;
+}
+
+ul{
+	font-size: 100%;
+	padding-left: 1.5em;
+}
+
+img{
+	border: 1px lightgray dashed;
+	vertical-align: bottom;
+
+	width: 480px;
+	height: 360px;
+	object-fit: cover;
+	object-position: center center;
+}
+
+header{
+	margin-bottom: 1em;
+}
+
+article{
+	margin-bottom: 1em;
+}
+
+section{
+	margin-bottom: 0.75em;
+}
+
+footer{
+	margin-bottom: 1em;
+}
+
+a:link {
+	color: #406080;
+}
+a:visited {
+	color: #406080;
+}
+a:hover {
+	color: #5995b3;
+}
+
+.small {
+	font-size: 75%;
+}
+
+.fl {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
