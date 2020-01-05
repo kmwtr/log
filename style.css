@@ -70,13 +70,13 @@ footer{
 }
 
 a:link {
-	color: #406080;
+    color: steelblue;
 }
 a:visited {
-	color: #406080;
+    color: slategray;
 }
 a:hover {
-	color: #5995b3;
+    color: lightseagreen;
 }
 
 .small {
