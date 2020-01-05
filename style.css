@@ -6,9 +6,15 @@ body{
 	text-align: left;
 	font-family: 'Source Code Pro', monospace;
 	line-height: 1.5em;
+	margin: auto;
+
 	width: 482px;
 	padding: 20px 40px;
-	margin: auto;
+
+	@media (max-width: 480px) {
+		width: 322px;
+		padding: 10px 20px;
+	}
 }
 
 h1, h2, h3, p, ul, li, a{
@@ -35,11 +41,16 @@ ul{
 img{
 	border: 1px lightgray dashed;
 	vertical-align: bottom;
+	object-fit: cover;
+	object-position: center center;
 
 	width: 480px;
 	height: 360px;
-	object-fit: cover;
-	object-position: center center;
+
+	@media (max-width: 480px) {
+		width: 320px;
+		height: 240px;
+	}
 }
 
 header{
