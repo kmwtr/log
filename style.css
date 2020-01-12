@@ -53,6 +53,12 @@ img{
 	}
 }
 
+hr{
+	height: 1px;
+	border: none;
+	border-top: 1px lightgray dashed;
+}
+
 header{
 	margin-bottom: 1em;
 }
