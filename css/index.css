@@ -81,10 +81,6 @@ footer{
 	margin-bottom: 1em;
 }
 
-footer p{
-	margin-bottom: 0.5em;
-}
-
 a:link {
     color: steelblue;
 }
@@ -105,4 +101,9 @@ a:hover {
 
 .clear {
 	clear: both;
+}
+
+
+.fb-share-button, .twitter-share-button {
+	margin-bottom: 0.5em;
 }
