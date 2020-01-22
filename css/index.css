@@ -81,6 +81,10 @@ footer{
 	margin-bottom: 1em;
 }
 
+footer p{
+	margin-bottom: 0.5em;
+}
+
 a:link {
     color: steelblue;
 }
