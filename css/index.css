@@ -8,13 +8,8 @@ body{
 	line-height: 1.5em;
 	margin: auto;
 
-	width: 960px;
+	width: 480px;
 	padding: 20px 40px;
-
-	@media (max-width: 480px) {
-		width: 322px;
-		padding: 10px 20px;
-	}
 }
 
 h1, h2, h3, p, ul, li, a{
@@ -39,22 +34,12 @@ ul{
 }
 
 img{
-	/*
-	border: 1px lightgray dashed;
-	vertical-align: bottom;
-	object-fit: cover;
-	*/
 	object-fit: contain;
 	object-position: center center;
 	background-image: url(./transparent_tile.png);
 
 	width: 480px;
 	height: 360px;
-
-	@media (max-width: 480px) {
-		width: 320px;
-		height: 240px;
-	}
 }
 
 hr{
