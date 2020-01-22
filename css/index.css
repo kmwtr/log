@@ -8,7 +8,7 @@ body{
 	line-height: 1.5em;
 	margin: auto;
 
-	width: 480px;
+	width: 960px;
 	padding: 20px 40px;
 
 	@media (max-width: 480px) {
@@ -68,11 +68,13 @@ header{
 }
 
 article{
+	display: flex;
+	flex-wrap: wrap;
 	margin-bottom: 1em;
 }
 
 section{
-	margin-bottom: 0.75em;
+	margin-right: 1.0em;
 }
 
 footer{
