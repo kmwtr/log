@@ -46,6 +46,11 @@ for i in range(len(compare_list)):
 
 print('- candidate_list: ' + str(candidate_list))
 
+# 候補のファイル名のみのリストを作成
+candidate_name_list = list(range(0))
+for i in range(len(candidate_list)):
+    file_name = candidate_list[i].split('.')
+    candidate_name_list.append(file_name[0])
 
 # 3: サムネイル画像作成・保存
 # -------------------------------------------------
@@ -65,7 +70,7 @@ for i in range(len(candidate_list)):
         image_obj = image_obj.crop((0, (pixel_height - pixel_width)/2, pixel_width, pixel_width + (pixel_height - pixel_width)/2))
         image_obj.thumbnail((360, 360), PIL.Image.LANCZOS)
         
-    image_obj.save(thumbnail_image_dir + 'tmb_' + compare_list[i] + '.jpg', quality=100)
+    image_obj.save(thumbnail_image_dir + 'tmb_' + candidate_name_list[i] + '.jpg', quality=100)
 
 
 # TODO: GIF
