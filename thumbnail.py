@@ -52,8 +52,20 @@ print('- candidate_list: ' + str(candidate_list))
 
 # 候補リストに基づいて画像を読む
 for i in range(len(candidate_list)):
-    image_source = PIL.Image.open(source_image_dir + candidate_list[i])
-    print(image_source.size)
+    image_obj = PIL.Image.open(source_image_dir + candidate_list[i])
+    image_obj = image_obj.convert('RGB')
+    # アスペクト比によって別処理
+    pixel_width = image_obj.width
+    pixel_height = image_obj.height
+    if pixel_width > pixel_height:
+        # 横長ならそのままリサイズ
+        image_obj.thumbnail((480, 360), PIL.Image.LANCZOS)
+    else:
+        # 縦長なら正方形にクリッピングしてリサイズ
+        image_obj = image_obj.crop((0, (pixel_height - pixel_width)/2, pixel_width, pixel_width + (pixel_height - pixel_width)/2))
+        image_obj.thumbnail((360, 360), PIL.Image.LANCZOS)
+        
+    image_obj.save(thumbnail_image_dir + 'tmb_' + compare_list[i] + '.jpg', quality=100)
 
 
 # TODO: GIF
