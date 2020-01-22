@@ -103,7 +103,6 @@ a:hover {
 	clear: both;
 }
 
-
-.fb-share-button, .twitter-share-button {
+.sns-button {
 	margin-bottom: 0.5em;
 }
