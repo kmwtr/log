@@ -77,6 +77,17 @@ for i in range(len(candidate_list)):
 # TODO: GIF
 # -------------------------------------------------
 
+# gifのリストを作成
+match_extension_regex = re.compile(r'\w+\.gif', re.I)
+gif_list = match_extension_regex.findall(str(source_image_list))
+
+# gifかつ256KB以上のリストを作成
+large_gif_list = list(range(0))
+for i in range(len(gif_list)):
+    if os.path.getsize(source_image_dir + gif_list[i]) > 512000:
+        large_gif_list.append(gif_list[i])
+
+print('- large_gif_list: ' + str(large_gif_list))
 
 # 4: html向けの文字列リストを作成
 # -------------------------------------------------
