@@ -8,8 +8,8 @@ body{
 	line-height: 1.5em;
 	margin: auto;
 
-	width: 1480px;
-	padding: 20px 40px;
+	width: 1000px;
+	padding: 20px;
 
 	@media (max-width: 480px) {
 		width: 322px;
@@ -26,15 +26,15 @@ h1{
 }
 
 h2{
-	font-size: 125%;
+	font-size: 100%;
 }
 
 p{
-	font-size: 100%;
+	font-size: 75%;
 }
 
 ul{
-	font-size: 100%;
+	font-size: 75%;
 	padding-left: 1.5em;
 }
 
@@ -48,12 +48,12 @@ img{
 	object-position: center center;
 	background-image: url(./transparent_tile.png);
 
-	width: 480px;
-	height: 360px;
+	width: 240px;
+	height: 180px;
 
 	@media (max-width: 480px) {
-		width: 320px;
-		height: 240px;
+		width: 240px;
+		height: 180px;
 	}
 }
 
@@ -75,7 +75,7 @@ article{
 }
 
 section{
-	margin-bottom: 0.75em;
+	margin-bottom: 0.5em;
 }
 
 footer{
@@ -93,7 +93,7 @@ a:hover {
 }
 
 .small {
-	font-size: 75%;
+	font-size: 60%;
 }
 
 .fl {
