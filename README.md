@@ -1,3 +1,3 @@
 # Log
 
-© 2019 Kami Wataru
+© 2019- kmwtr | Kami Wataru
