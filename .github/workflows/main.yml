@@ -34,12 +34,11 @@ jobs:
           
       - name: Hello Script Mode
         env:
-          GITHUB_TOKEN:                 ${{ secrets.GITHUB_TOKEN }}
           TWITTER_API_KEY:              ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET_KEY:       ${{ secrets.TWITTER_API_SECRET_KEY }}
           TWITTER_ACCESS_TOKEN:         ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET:  ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
           GITHUB_CONTEXT: ${{ toJson(github) }}
-          msg_A: "https://log.kmwtr.xyz"
+          SITE_URL: "https://log.kmwtr.xyz"
         run: |
           python .github/actions/commit_notice_injector.py

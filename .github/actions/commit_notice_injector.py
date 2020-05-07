@@ -14,13 +14,14 @@ json_load = json.loads(os.getenv('GITHUB_CONTEXT'))
 
 commit_id = str(json_load['event']['head_commit']['id'])[0:4]
 message =   str(json_load['event']['head_commit']['message']).splitlines()
-phrase =    str(os.getenv('msg_A'))
+phrase =    str(os.getenv('SITE_URL'))
 
 files_str = os.getenv('ADDED_FILES')
 files = files_str.strip('[]')
 files = files.split(',')
+file_basename = os.path.basename(str(files[0]))
 
-msg = '[ Log was updated ]' + ' ID: ' + commit_id + ' | File: ' + str(files[0]) + ' | Summary: ' + str(message[0]) + ' | ' + phrase
+msg = '🚩 Log was updated' + ' 🆔 ' + commit_id + ' 🖼️ ' + file_basename + ' 💬 ' + str(message[0]) + ' 🔗 ' + phrase
 
 
 # Twitter API
@@ -47,6 +48,6 @@ def commit_notice_injector():
     t.statuses.update(status=msg, media_ids=id_img)
 
 
-# 
+# GO
 # - - - - - - - - - - - - - - - - - - - - -
 commit_notice_injector()
