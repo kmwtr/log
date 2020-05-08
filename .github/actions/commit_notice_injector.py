@@ -28,6 +28,9 @@ for path in files:
 
 msg = '🚩 Log was updated' + ' 🆔 ' + commit_id + ' 🖼️ ' + file_basename + ' 💬 ' + str(message[0]) + ' 🔗 ' + phrase
 
+log.debug('image_path: ' + image_path)
+log.debug('file_basename: ' + file_basename)
+log.debug('msg: ' + msg)
 
 # Twitter API
 # -------------------------------------------------
