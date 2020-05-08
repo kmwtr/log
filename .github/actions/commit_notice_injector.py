@@ -23,8 +23,9 @@ image_path = ''
 
 for path in files:
     if '.html' not in path:
-        image_path = path
-        file_basename = os.path.basename(path)
+        if 'tmb_' not in path:
+            image_path = path
+            file_basename = os.path.basename(path)
 
 msg = '🚩 Log was updated' + ' 🆔 ' + commit_id + ' 🖼️ ' + file_basename + ' 💬 ' + str(message[0]) + ' 🔗 ' + phrase
 
