@@ -19,6 +19,7 @@ phrase =    str(os.getenv('SITE_URL'))
 files_str = os.getenv('ADDED_FILES')
 files = files_str.strip('[]')
 files = files.split(',')
+image_path = ''
 
 for path in files:
     if '.html' not in path:
