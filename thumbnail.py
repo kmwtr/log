@@ -21,11 +21,11 @@ class GUIFrame(tk.Frame):
 # 0:
 # -------------------------------------------------
 
-year = '20'
-quarter = 'Q2'
-source_image_dir = './img/' + year + '/'
-thumbnail_image_dir = './img/tmb/' + year + '/'
-html_dir = './html/' + year + quarter + '.html'
+year = 20
+quarter = 2
+source_image_dir = './img/' + str(year) + '/'
+thumbnail_image_dir = './img/tmb/' + str(year) + '/'
+html_dir = './html/' + str(year) + 'Q'+ str(quarter) + '.html'
 
 log.debug('source_image_dir: ' + source_image_dir)
 log.debug('thumbnail_image_dir: ' + thumbnail_image_dir)
@@ -90,14 +90,16 @@ for i in range(len(candidate_list)):
 source_image_list.sort(reverse=True)
 
 # このクオーターに属するものを抽出する（ひとまずこれで…
-if quarter == 'Q1':
-    date_code = (year + '01', year + '02', year + '03')
-elif quarter == 'Q2':
-    date_code = (year + '04', year + '05', year + '06')
-elif quarter == 'Q3':
-    date_code = (year + '07', year + '08', year + '09')
-elif quarter == 'Q4':
-    date_code = (year + '10', year + '11', year + '12')
+# 普通に算出できるようになったので、以下要修正！！！
+
+if quarter == 1:
+    date_code = (str(year) + '01', str(year) + '02', str(year) + '03')
+elif quarter == 2:
+    date_code = (str(year) + '04', str(year) + '05', str(year) + '06')
+elif quarter == 3:
+    date_code = (str(year) + '07', str(year) + '08', str(year) + '09')
+elif quarter == 4:
+    date_code = (str(year) + '10', str(year) + '11', str(year) + '12')
 
 log.debug('date_code: ' + str(date_code))
 
@@ -171,6 +173,8 @@ log.debug('FINISH')
 # GUI test
 # -------------------------------------------------
 
+# TKあんまり良くないな…
+
 window = tk.Tk()
 window.title("L.A.P. | Log Assets Processor (GUI test)")
 window.geometry("482x482")
@@ -185,19 +189,19 @@ window.grid_rowconfigure(5, pad=8)
 window.grid_rowconfigure(6, pad=8)
 
 # -----------------------
-label_year = tk.Label(text='Year')
+label_year = tk.Label(text=str(year))
 label_year.grid(row=0, column=0)
 
 entry_year_target = tk.Entry()
-entry_year_target.insert(tk.END, year)
+entry_year_target.insert(tk.END, str(year))
 entry_year_target.grid(row=0, column=1)
 
 # -----------------------
-label_year = tk.Label(text='Quarter')
+label_year = tk.Label(text=str(quarter))
 label_year.grid(row=1, column=0)
 
 entry_year_target = tk.Entry()
-entry_year_target.insert(tk.END, quarter)
+entry_year_target.insert(tk.END, str(quarter))
 entry_year_target.grid(row=1, column=1)
 
 # -----------------------
