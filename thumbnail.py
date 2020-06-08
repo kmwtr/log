@@ -3,7 +3,7 @@ import os
 import copy
 import re
 import logging as log
-import tkinter as tk
+#import tkinter as tk
 from PIL import Image
 
 # Debug
@@ -170,6 +170,7 @@ target_file.close()
 log.debug('FINISH')
 
 
+'''
 # GUI test
 # -------------------------------------------------
 
@@ -226,11 +227,9 @@ tk.Button(text="GO").grid(ipadx=50, row=6, column=1)
 # -----------------------
 window.mainloop()
 
-
 # TODO: GIF
 # -------------------------------------------------
 
-"""
 # gifのリストを作成
 match_extension_regex = re.compile(r'\w+\.gif', re.I)
 gif_list = match_extension_regex.findall(str(source_image_list))
@@ -242,4 +241,4 @@ for i in range(len(gif_list)):
         large_gif_list.append(gif_list[i])
 
 print('- large_gif_list: ' + str(large_gif_list))
-"""
+'''
