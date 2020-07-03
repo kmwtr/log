@@ -3,26 +3,18 @@ import os
 import copy
 import re
 import logging as log
-#import tkinter as tk
 from PIL import Image
 
 # Debug
 # -------------------------------------------------
 log.basicConfig(level=log.DEBUG, format='%(asctime)s | %(levelname)s | %(message)s')
 
-"""
-# Class
-# -------------------------------------------------
-class GUIFrame(tk.Frame):
-    def __init__(self):
-        self.num = 999
-"""     
-
 # 0:
 # -------------------------------------------------
 
 year = 20
-quarter = 2
+quarter = 3
+
 source_image_dir = './img/' + str(year) + '/'
 thumbnail_image_dir = './img/tmb/' + str(year) + '/'
 html_dir = './html/' + str(year) + 'Q'+ str(quarter) + '.html'
@@ -90,16 +82,13 @@ for i in range(len(candidate_list)):
 source_image_list.sort(reverse=True)
 
 # このクオーターに属するものを抽出する（ひとまずこれで…
-# 普通に算出できるようになったので、以下要修正！！！
 
-if quarter == 1:
-    date_code = (str(year) + '01', str(year) + '02', str(year) + '03')
-elif quarter == 2:
-    date_code = (str(year) + '04', str(year) + '05', str(year) + '06')
-elif quarter == 3:
-    date_code = (str(year) + '07', str(year) + '08', str(year) + '09')
-elif quarter == 4:
-    date_code = (str(year) + '10', str(year) + '11', str(year) + '12')
+base_num = int((quarter-1) * 3)
+date_code = (
+    str(year) + str(base_num + 1).zfill(2), 
+    str(year) + str(base_num + 2).zfill(2), 
+    str(year) + str(base_num + 3).zfill(2)
+    )
 
 log.debug('date_code: ' + str(date_code))
 
@@ -168,77 +157,3 @@ target_file.write(updated_html)
 target_file.close()
 
 log.debug('FINISH')
-
-
-'''
-# GUI test
-# -------------------------------------------------
-
-# TKあんまり良くないな…
-
-window = tk.Tk()
-window.title("L.A.P. | Log Assets Processor (GUI test)")
-window.geometry("482x482")
-window.grid_columnconfigure(0, weight=1, pad=16)
-window.grid_columnconfigure(1, weight=2, pad=16)
-window.grid_rowconfigure(0, pad=8)
-window.grid_rowconfigure(1, pad=8)
-window.grid_rowconfigure(2, pad=8)
-window.grid_rowconfigure(3, pad=8)
-window.grid_rowconfigure(4, pad=8)
-window.grid_rowconfigure(5, pad=8)
-window.grid_rowconfigure(6, pad=8)
-
-# -----------------------
-label_year = tk.Label(text=str(year))
-label_year.grid(row=0, column=0)
-
-entry_year_target = tk.Entry()
-entry_year_target.insert(tk.END, str(year))
-entry_year_target.grid(row=0, column=1)
-
-# -----------------------
-label_year = tk.Label(text=str(quarter))
-label_year.grid(row=1, column=0)
-
-entry_year_target = tk.Entry()
-entry_year_target.insert(tk.END, str(quarter))
-entry_year_target.grid(row=1, column=1)
-
-# -----------------------
-tk.Label(text='Source Image DIR:').grid(row=2, column=0)
-tk.Label(text=source_image_dir).grid(row=2, column=1)
-
-tk.Label(text='Thumbnail Image DIR:').grid(row=3, column=0)
-tk.Label(text=thumbnail_image_dir).grid(row=3, column=1)
-
-tk.Label(text='Target HTML DIR:').grid(row=4, column=0)
-tk.Label(text=html_dir).grid(row=4, column=1)
-
-tk.Label(text='Candidate Image List:').grid(row=5, column=0)
-tk_candidate_image_list = tk.Text(height=str(len(candidate_list)), width=30, wrap=tk.CHAR)
-tk_candidate_image_list.insert(tk.END, '\n'.join(candidate_list))
-tk_candidate_image_list.grid(row=5, column=1)
-
-# -----------------------
-tk.Label(text='Update').grid(row=6, column=0)
-tk.Button(text="GO").grid(ipadx=50, row=6, column=1)
-
-# -----------------------
-window.mainloop()
-
-# TODO: GIF
-# -------------------------------------------------
-
-# gifのリストを作成
-match_extension_regex = re.compile(r'\w+\.gif', re.I)
-gif_list = match_extension_regex.findall(str(source_image_list))
-
-# gifかつ256KB以上のリストを作成
-large_gif_list = list(range(0))
-for i in range(len(gif_list)):
-    if os.path.getsize(source_image_dir + gif_list[i]) > 512000:
-        large_gif_list.append(gif_list[i])
-
-print('- large_gif_list: ' + str(large_gif_list))
-'''
