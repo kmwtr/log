@@ -121,12 +121,12 @@ log.debug('add_list: ' + str(add_list))
 # ひどい　後で直す
 for i in range(len(image_name_list)):
     if add_list[i].startswith(r'tmb_'):
-        add_list[i] = r'        <section><p>' + image_name_list[i] + r'</p><a href=".' + source_image_dir + source_image_list[i] + r'"><img src=".' + thumbnail_image_dir + add_list[i] + r'"></a></section>'
+        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href=".' + source_image_dir + source_image_list[i] + r'"><img src=".' + thumbnail_image_dir + add_list[i] + r'"></a></section>'
     else:
-        add_list[i] = r'        <section><p>' + image_name_list[i] + r'</p><a href=".' + source_image_dir + source_image_list[i] + r'"><img src=".' + source_image_dir + add_list[i] + r'"></a></section>'
+        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href=".' + source_image_dir + source_image_list[i] + r'"><img src=".' + source_image_dir + add_list[i] + r'"></a></section>'
 
 html_article = '\n'.join(add_list)
-html_article += '\n    '
+html_article += '\n        '
 
 log.debug('html_article: ' + str(html_article))
 
@@ -140,7 +140,7 @@ html_content = html_file.read()
 
 #
 html_regex_A = re.compile(r'<!DOCTYPE html>.*<article class="log_images">\n', re.DOTALL)
-html_regex_B = re.compile(r'</article>.*</html>', re.DOTALL)
+html_regex_B = re.compile(r'</article class="log_images">.*</html>', re.DOTALL)
 
 html_mo_A = html_regex_A.search(html_content)
 html_mo_B = html_regex_B.search(html_content)
