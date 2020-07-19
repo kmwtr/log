@@ -4,6 +4,7 @@ import copy
 import re
 import logging as log
 from PIL import Image
+import yaml
 
 # Debug
 # -------------------------------------------------

@@ -1,0 +1,9 @@
+# log assets processor settings
+
+Base DIR: D:/Github/kmwtr_log
+Source Image DIR: /img
+Thumbnail Image DIR: /img/tmb
+Target HTML DIR: /html
+
+Year: 2020
+Quarter: 3
