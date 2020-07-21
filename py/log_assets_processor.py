@@ -10,11 +10,16 @@ import yaml
 # -------------------------------------------------
 log.basicConfig(level=log.DEBUG, format='%(asctime)s | %(levelname)s | %(message)s')
 
-# 0:
+# 0: 設定のロード
 # -------------------------------------------------
 
-year = 20
-quarter = 3
+
+file = open("py/lap_settings.yaml", "r")
+
+data = yaml.load(file)
+
+year = data["Year"]
+quarter = data["Quarter"]
 
 source_image_dir = './img/' + str(year) + '/'
 thumbnail_image_dir = './img/tmb/' + str(year) + '/'
