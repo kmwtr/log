@@ -6,51 +6,49 @@ import logging as log
 from PIL import Image
 import yaml
 
-# Debug
+# Debug Setting
 # -------------------------------------------------
+
 log.basicConfig(level=log.DEBUG, format='%(asctime)s | %(levelname)s | %(message)s')
 
 # 0: 設定のロード
 # -------------------------------------------------
 
-
-file = open("py/lap_settings.yaml", "r")
-
+file = open("py/lap_settings.yaml", "r", encoding='utf-8')
 data = yaml.load(file)
 
-year = data["Year"]
-quarter = data["Quarter"]
+year        = data["Year"]
+quarter     = data["Quarter"]
 
-source_image_dir = './img/' + str(year) + '/'
-thumbnail_image_dir = './img/tmb/' + str(year) + '/'
-html_dir = './html/' + str(year) + 'Q'+ str(quarter) + '.html'
+base_dir    = str(data["Base DIR"])
+src_img_dir = base_dir + str(data["Source Image DIR"]) + '/' + str(year) + '/'
+tmb_img_dir = base_dir + str(data["Thumbnail Image DIR"]) + '/' + str(year) + '/'
+html_dir    = base_dir + str(data["Target HTML DIR"]) + '/' + str(year) + 'Q'+ str(quarter) + '.html'
 
-log.debug('source_image_dir: ' + source_image_dir)
-log.debug('thumbnail_image_dir: ' + thumbnail_image_dir)
-log.debug('html_dir: ' + html_dir)
-
+log.debug('base_dir: ' + base_dir)
+log.debug('src_img_dir: ' + src_img_dir)
+log.debug('tmb_img_dir: ' + tmb_img_dir)
+log.debug('html_dir:    ' + html_dir)
 
 # 1: リスト作成
 # -------------------------------------------------
 
 # ファイルリスト取得
-source_image_list = os.listdir(source_image_dir)
-thumbnail_image_list = os.listdir(thumbnail_image_dir)
+source_image_list       = os.listdir(src_img_dir)
+thumbnail_image_list    = os.listdir(tmb_img_dir)
 
-# jpg,pngのリストを作成
+# jpg, png のリストを作成
 match_extension_regex = re.compile(r'\w+\.jpg|\w+\.png', re.I)
 jpg_png_list = match_extension_regex.findall(str(source_image_list))
 
-# jpg,pngのリストから、128KB以上かつ480*360px以上のファイルリストを作成
-large_image_list = list(range(0))
+# jpg, png のリストから、128KB以上のファイルリストを作成
+large_image_list = []
 for i in range(len(jpg_png_list)):
-    if os.path.getsize(source_image_dir + jpg_png_list[i]) > 128000:
-        tmp_img_obj = Image.open(source_image_dir + jpg_png_list[i])
-        if (tmp_img_obj.width * tmp_img_obj.height) > 172800: # == 480*360
-            large_image_list.append(jpg_png_list[i])
+    if os.path.getsize(src_img_dir + jpg_png_list[i]) > 128000:
+        large_image_list.append(jpg_png_list[i])
 
 # 重量級画像かつサムネイル未整備のリストを作成
-candidate_list = list(range(0))
+candidate_list = []
 for i in range(len(large_image_list)):
     tmp_name = large_image_list[i].split('.')[0]
     if not any(s.startswith(r'tmb_' + tmp_name) for s in thumbnail_image_list):
@@ -58,13 +56,12 @@ for i in range(len(large_image_list)):
 
 log.debug('candidate_list: ' + str(candidate_list))
 
-
 # 2: サムネイル画像作成・保存
 # -------------------------------------------------
 
 # 候補リストに基づいて画像を読む
 for i in range(len(candidate_list)):
-    image_obj = Image.open(source_image_dir + candidate_list[i])
+    image_obj = Image.open(src_img_dir + candidate_list[i])
     image_obj = image_obj.convert('RGB') # 必要???
     # アスペクト比によって別処理
     pixel_width = image_obj.width
@@ -78,8 +75,8 @@ for i in range(len(candidate_list)):
         image_obj.thumbnail((360, 360), Image.LANCZOS)
     
     tmp_name = candidate_list[i].split('.')[0]
-    image_obj.save(thumbnail_image_dir + 'tmb_' + tmp_name + '.jpg', quality=100)
-    log.debug('tmp_name: ' + thumbnail_image_dir + 'tmb_' + tmp_name + '.jpg')
+    image_obj.save(tmb_img_dir + 'tmb_' + tmp_name + '.jpg', quality=95)
+    log.debug('saved_tmb: ' + tmb_img_dir + 'tmb_' + tmp_name + '.jpg')
 
 
 # 3: html向けの文字列リストを作成
@@ -99,7 +96,7 @@ date_code = (
 log.debug('date_code: ' + str(date_code))
 
 # 名前リストを作成
-image_name_list = list(range(0))
+image_name_list = []
 for i in range(len(source_image_list)):
     tmp_file_name = source_image_list[i].split('.')[0]
     if tmp_file_name.startswith(date_code):
@@ -107,11 +104,11 @@ for i in range(len(source_image_list)):
 
 log.debug('image_name_list: ' + str(image_name_list))
 
-# サムネイルリストを最新の状態に更新する
-thumbnail_image_list = os.listdir(thumbnail_image_dir)
+# サムネイルリストを最新の状態に更新
+thumbnail_image_list = os.listdir(tmb_img_dir)
 
-# htmlに入れたい文字列のリストを取得
-add_list = list(range(0))
+# htmlに入れたい文字列のリストを取得（差分ではなく毎回まとめて成形する）
+add_list = []
 for i in range(len(image_name_list)):
     if any( s.startswith(r'tmb_' + image_name_list[i]) for s in thumbnail_image_list):
         add_list.append(r'tmb_' + image_name_list[i] + r'.jpg')
@@ -127,14 +124,14 @@ log.debug('add_list: ' + str(add_list))
 # ひどい　後で直す
 for i in range(len(image_name_list)):
     if add_list[i].startswith(r'tmb_'):
-        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href=".' + source_image_dir + source_image_list[i] + r'"><img src=".' + thumbnail_image_dir + add_list[i] + r'"></a></section>'
+        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href="' + src_img_dir.replace(base_dir, '..') + source_image_list[i] + r'"><img src="' + tmb_img_dir.replace(base_dir, '..') + add_list[i] + r'"></a></section>'
     else:
-        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href=".' + source_image_dir + source_image_list[i] + r'"><img src=".' + source_image_dir + add_list[i] + r'"></a></section>'
+        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href="' + src_img_dir.replace(base_dir, '..') + source_image_list[i] + r'"><img src="' + src_img_dir.replace(base_dir, '..') + add_list[i] + r'"></a></section>'
 
 html_article = '\n'.join(add_list)
 html_article += '\n        '
 
-log.debug('html_article: ' + str(html_article))
+log.debug('html_article: \n' + str(html_article))
 
 
 # 5: htmlに反映
@@ -163,3 +160,6 @@ target_file.write(updated_html)
 target_file.close()
 
 log.debug('FINISH')
+
+
+# 画像の命名規則を間違うと色々やばいことが起こる
