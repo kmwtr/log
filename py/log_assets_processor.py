@@ -14,8 +14,16 @@ log.basicConfig(level=log.DEBUG, format='%(asctime)s | %(levelname)s | %(message
 # 0: 設定のロード
 # -------------------------------------------------
 
+path = os.getcwd()
+log.debug('path:        ' + path)
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+path = os.getcwd()
+log.debug('path:        ' + path)
+
 file = open("lap_settings.yaml", "r", encoding='utf-8')
-data = yaml.load(file)
+data = yaml.safe_load(file)
 
 year        = data["Year"]
 quarter     = data["Quarter"]
@@ -25,7 +33,7 @@ src_img_dir = base_dir + str(data["Source Image DIR"]) + '/' + str(year) + '/'
 tmb_img_dir = base_dir + str(data["Thumbnail Image DIR"]) + '/' + str(year) + '/'
 html_dir    = base_dir + str(data["Target HTML DIR"]) + '/' + str(year) + 'Q'+ str(quarter) + '.html'
 
-log.debug('base_dir: ' + base_dir)
+log.debug('base_dir:    ' + base_dir)
 log.debug('src_img_dir: ' + src_img_dir)
 log.debug('tmb_img_dir: ' + tmb_img_dir)
 log.debug('html_dir:    ' + html_dir)
