@@ -14,7 +14,7 @@ log.basicConfig(level=log.DEBUG, format='%(asctime)s | %(levelname)s | %(message
 # 0: 設定のロード
 # -------------------------------------------------
 
-file = open("py/lap_settings.yaml", "r", encoding='utf-8')
+file = open("lap_settings.yaml", "r", encoding='utf-8')
 data = yaml.load(file)
 
 year        = data["Year"]
