@@ -61,5 +61,6 @@ def commit_notice_injector():
 # - - - - - - - - - - - - - - - - - - - - -
 5
 if 'WIP' not in str(message[0]):
-#if 'FIX' in str(message[0]):
-    commit_notice_injector()
+    if 'minor update' not in str(message[0]):
+        #if 'FIX' in str(message[0]):
+        commit_notice_injector()
