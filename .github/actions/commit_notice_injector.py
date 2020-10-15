@@ -27,7 +27,7 @@ for path in files:
             image_path = path
             file_basename = os.path.basename(path)
 
-msg = '🚩 Log was updated' + ' 🆔 ' + commit_id + ' 🖼️ ' + file_basename + ' 💬 ' + str(message[0]) + ' 🔗 ' + phrase
+msg = '🚩 Log was updated' + ' 🆔 ' + commit_id + ' 🖼️ ' + file_basename + ' 💬 ' + str(message[0]).replace('tweet', '') + ' 🔗 ' + phrase
 
 log.debug('image_path: ' + image_path)
 log.debug('file_basename: ' + file_basename)
@@ -59,8 +59,6 @@ def commit_notice_injector():
 
 # GO
 # - - - - - - - - - - - - - - - - - - - - -
-5
-if 'WIP' not in str(message[0]):
-    if 'minor update' not in str(message[0]):
-        #if 'FIX' in str(message[0]):
-        commit_notice_injector()
+
+if 'tweet' in str(message[0]):
+    commit_notice_injector()
