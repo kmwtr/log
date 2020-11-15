@@ -1,111 +1,21 @@
-*{margin:0; padding:0; font-size:100%; font-weight:normal; vertical-align:baseline; background:transparent; border:none;}
-
-/* --------------- */
-
-body{
-	background: White;
-	color: Black;
-	text-align: left;
-	font-family: 'Source Code Pro', monospace;
-	line-height: 1.6em;
-
-	@media (max-width: 480px) {
-		width: 322px;
-		padding: 10px 20px;
-	}
-}
-
-/* --------------- */
-
-#Pickup, #Daily, header, footer{
-	margin: auto;
-	width: 1000px;
-	padding: 20px;
-}
-
-#PickupWrapper, #Pickup{
-	background: #222222;
-	color: White;
-}
-
-/* --------------- */
-
-h1, h2, h3, p, ul, li, a{
-	font-weight: normal;
-}
-
-h1, h2, h3{
-	line-height: 2.0em;
-}
-
-h1{
-	font-size: 140%;
-}
-
 h2{
-	font-size: 120%;
-	margin-bottom: 1em;
-	border-bottom: 1px gray dashed;
+	border-bottom: 1px lightgray dashed;
 }
 
-p, ul{
-	font-size: 80%;
-}
-
-hr{
-	height: 1px;
-	border: none;
-	border-top: 1px gray dashed;
+#log_images{    
+    display: grid;
+    grid-template-columns: 240px 240px 240px 240px;
+    column-gap: 13px;
+    row-gap: 0px;
+	margin-bottom: 1.5em;
 }
 
 img{
-	object-fit: contain;
-	object-position: center center;
 	background-image: url(./transparent_tile.png);
 	width: 240px;
 	height: 180px;
 }
 
-/* --------------- */
-
-article{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin-bottom: 1em;
-}
-
-article::before{
-  content:"";
-  display: block;
-  width:240px;
-  order:1;
-}
-
-article::after{
-  content:"";
-  display: block;
-  width:240px;
-}
-
 section{
 	margin-bottom: 0.5em;
-}
-
-/* --------------- */
-
-a:link {
-    color: steelblue;
-}
-a:visited {
-    color: slategray;
-}
-a:hover {
-    color: lightseagreen;
-}
-
-/* --------------- */
-
-.small {
-	font-size: 75%;
 }
