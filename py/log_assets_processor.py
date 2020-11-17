@@ -150,8 +150,8 @@ html_file = open(html_dir, 'r', encoding='utf-8')
 html_content = html_file.read()
 
 #
-html_regex_A = re.compile(r'<!DOCTYPE html>.*<article class="log_images">\n', re.DOTALL)
-html_regex_B = re.compile(r'</article class="log_images">.*</html>', re.DOTALL)
+html_regex_A = re.compile(r'<!DOCTYPE html>.*<section id="log_images">\n', re.DOTALL)
+html_regex_B = re.compile(r'</section>\n    </article>.*</html>', re.DOTALL)
 
 html_mo_A = html_regex_A.search(html_content)
 html_mo_B = html_regex_B.search(html_content)
