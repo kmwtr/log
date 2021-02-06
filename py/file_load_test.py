@@ -42,11 +42,14 @@ def load_settings():
     src_img_dir = base_dir + str(data["Source Image DIR"]) + '/' + str(year) + '/'
     tmb_img_dir = base_dir + str(data["Thumbnail Image DIR"]) + '/' + str(year) + '/'
     html_dir    = base_dir + str(data["Target HTML DIR"]) + '/' + str(year) + 'Q'+ str(quarter) + '.html'
-
+    
     log.debug('base_dir:    ' + base_dir)
     log.debug('src_img_dir: ' + src_img_dir)
     log.debug('tmb_img_dir: ' + tmb_img_dir)
     log.debug('html_dir:    ' + html_dir)
+
+    setting_dict = {'year':year, 'quarter':quarter, 'base_dir':base_dir, 'src_img_dir':src_img_dir, 'tmb_img_dir':tmb_img_dir, 'html_dir':html_dir}
+    return setting_dict
 
 # 実行
 # -------------------------------------------------
