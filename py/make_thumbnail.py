@@ -73,15 +73,8 @@ def make_gif_thumbnail(image_lists: dict, dirs_list: dict):
         output_path = dirs_list['tmb_img_dir'] + 'tmb_' + candidate_gif_list[i]
         log.debug(dirs_list['src_img_dir'] + candidate_gif_list[i])
 
-        image_obj = Image.open(dirs_list['src_img_dir'] + candidate_gif_list[i])
-        
-        # アスペクト比を維持
-        size_x = image_obj.width
-        size_y = image_obj.height
-        resize_height = 240 * size_y // size_x
-
         # 圧縮、中間ファイルとして出力
-        cp = subprocess.run(['gifsicle','--resize', '240x' + str(resize_height), '--optimize=3', '--colors', '256', '--lossy=40', dirs_list['src_img_dir'] + candidate_gif_list[i], '>', output_path], shell=True, encoding='utf-8', stdout=subprocess.PIPE) # shell=True 重要!
+        cp = subprocess.run(['gifsicle','--resize', '240x180', '--optimize=3', '--colors', '256', '--lossy=40', dirs_list['src_img_dir'] + candidate_gif_list[i], '>', output_path], shell=True, encoding='utf-8', stdout=subprocess.PIPE) # shell=True 重要!
         log.debug(cp)
 
 # -------------------------------------------------
