@@ -29,7 +29,6 @@ make_gif_thumbnail(image_lists, settings)
 image_lists['source_image_list'].sort(reverse=True)
 
 # このクオーターに属するものを抽出する（ひとまずこれで…
-
 base_num = int((settings['quarter']-1) * 3)
 date_code = (
     str(settings['year']) + str(base_num + 1).zfill(2), 
@@ -39,12 +38,14 @@ date_code = (
 
 log.debug('date_code: ' + str(date_code))
 
-# 名前リストを作成
-image_name_list = []
+# 今回のクオーター内の名前リストを作成
+image_name_list = [] # 名前のみ
+this_quarter_img_file_list = [] # ファイル名全体
 for i in range(len(image_lists['source_image_list'])):
     tmp_file_name = image_lists['source_image_list'][i].split('.')[0]
     if tmp_file_name.startswith(date_code):
         image_name_list.append(tmp_file_name)
+        this_quarter_img_file_list.append(image_lists['source_image_list'][i])
 
 log.debug('image_name_list: ' + str(image_name_list))
 
@@ -61,7 +62,7 @@ for i in range(len(image_name_list)):
         else:
             add_list.append(r'tmb_' + image_name_list[i] + r'.jpg')
     else:
-        add_list.append(image_lists['source_image_list'][i])
+        add_list.append(this_quarter_img_file_list[i])
 
 log.debug('add_list: ' + str(add_list))
 
