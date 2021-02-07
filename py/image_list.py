@@ -2,6 +2,7 @@
 import os
 import re
 import logging as log
+from PIL import Image
 
 import debug_config
 from load_settings import load_settings
@@ -42,7 +43,12 @@ def image_list(dir_settings: dict) -> dict:
 
     for i in range(len(gif_list)):
         if os.path.getsize(dir_settings['src_img_dir'] + gif_list[i]) > gif_threshold_byte:
-            large_gif_list.append(gif_list[i])
+            # gif は解像度も確認する
+            tmp_obj = Image.open(dir_settings['src_img_dir'] + gif_list[i])
+            tmp_reso = tmp_obj.width * tmp_obj.height
+            # 240 * 180 を超える場合
+            if tmp_reso > 43200:
+                large_gif_list.append(gif_list[i])
 
     log.debug('large_image_list:     ' + str(large_image_list))
     log.debug('large_gif_list:       ' + str(large_gif_list))
