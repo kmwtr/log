@@ -21,6 +21,8 @@ make_image_thumbnail(image_lists, settings)
 make_gif_thumbnail(image_lists, settings)
 
 
+# 以下未整理
+
 # 3: html向けの文字列リストを作成
 # -------------------------------------------------
 
