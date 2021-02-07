@@ -51,9 +51,9 @@ def load_settings():
     setting_dict = {'year':year, 'quarter':quarter, 'base_dir':base_dir, 'src_img_dir':src_img_dir, 'tmb_img_dir':tmb_img_dir, 'html_dir':html_dir}
     return setting_dict
 
-# 実行
+
 # -------------------------------------------------
 
-load_settings()
-
-os.system('PAUSE')
+if __name__ == '__main__':
+    load_settings()
+    os.system('PAUSE')
