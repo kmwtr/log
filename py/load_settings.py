@@ -1,14 +1,14 @@
 #! python3
 import os
 import glob
-import logging as log
 import yaml
+import logging as log
 
-def load_settings():
-    # Debug Setting
-    log.basicConfig(level=log.DEBUG, format='%(asctime)s | %(levelname)s | %(message)s')
+import debug_config
+
+def load_settings() -> dict:
     log.debug('-> load_settings()')
-        
+
     # 現在のディレクトリ位置
     path = os.getcwd()
     log.debug('cwd_path:    ' + path)
