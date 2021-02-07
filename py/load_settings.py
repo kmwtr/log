@@ -56,4 +56,4 @@ def load_settings() -> dict:
 
 if __name__ == '__main__':
     load_settings()
-    os.system('PAUSE')
+    #os.system('PAUSE')

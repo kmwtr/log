@@ -47,4 +47,4 @@ def image_list(dir_settings: dict) -> dict:
 
 if __name__ == '__main__':
     image_list(load_settings())
-    os.system('PAUSE')
+    #os.system('PAUSE')
