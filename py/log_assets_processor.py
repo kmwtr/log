@@ -40,7 +40,7 @@ log.debug('date_code: ' + str(date_code))
 
 # 今回のクオーター内の名前リストを作成
 image_name_list = [] # 名前のみ
-this_quarter_img_file_list = [] # ファイル名全体
+this_quarter_img_file_list = [] # 拡張子含むファイル名
 for i in range(len(image_lists['source_image_list'])):
     tmp_file_name = image_lists['source_image_list'][i].split('.')[0]
     if tmp_file_name.startswith(date_code):
@@ -48,6 +48,7 @@ for i in range(len(image_lists['source_image_list'])):
         this_quarter_img_file_list.append(image_lists['source_image_list'][i])
 
 log.debug('image_name_list: ' + str(image_name_list))
+log.debug('this_quarter_img_file_list: ' + str(this_quarter_img_file_list))
 
 # サムネイルリストを最新の状態に更新
 image_lists['thumbnail_image_list'] = os.listdir(settings['tmb_img_dir'])
@@ -66,6 +67,7 @@ for i in range(len(image_name_list)):
 
 log.debug('add_list: ' + str(add_list))
 
+# ここまで問題ない気がするが…。
 
 # 4: html形式の文字列に成形
 # -------------------------------------------------
@@ -73,9 +75,9 @@ log.debug('add_list: ' + str(add_list))
 # ひどい　後で直す
 for i in range(len(image_name_list)):
     if add_list[i].startswith(r'tmb_'):
-        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href="' + settings['src_img_dir'].replace(settings['base_dir'], '..') + image_lists['source_image_list'][i] + r'"><img src="' + settings['tmb_img_dir'].replace(settings['base_dir'], '..') + add_list[i] + r'"></a></section>'
+        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href="' + settings['src_img_dir'].replace(settings['base_dir'], '..') + this_quarter_img_file_list[i] + r'"><img src="' + settings['tmb_img_dir'].replace(settings['base_dir'], '..') + add_list[i] + r'"></a></section>'
     else:
-        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href="' + settings['src_img_dir'].replace(settings['base_dir'], '..') + image_lists['source_image_list'][i] + r'"><img src="' + settings['src_img_dir'].replace(settings['base_dir'], '..') + add_list[i] + r'"></a></section>'
+        add_list[i] = r'            <section><p>' + image_name_list[i] + r'</p><a href="' + settings['src_img_dir'].replace(settings['base_dir'], '..') + this_quarter_img_file_list[i] + r'"><img src="' + settings['src_img_dir'].replace(settings['base_dir'], '..') + add_list[i] + r'"></a></section>'
 
 html_article = '\n'.join(add_list)
 html_article += '\n        '
