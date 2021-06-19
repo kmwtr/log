@@ -69,6 +69,7 @@ header{
     margin-bottom: 1.0em;
 }
 
+
 article{
     margin-bottom: 1.0em;
 }
@@ -97,4 +98,18 @@ a:hover {
     column-gap: 13px;
     row-gap: 0px;
 	margin-bottom: 1.5em;
+}
+
+#kusa{
+    width: 740px;
+    height: 125px;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#kusa img{
+    background-image: none;
+    width: auto;
+    height: auto;
 }
