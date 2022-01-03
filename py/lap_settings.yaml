@@ -1,8 +1,8 @@
 # log assets processor settings
 # 注：末尾に'/'を入れないこと。
 
-Year: 21
-Quarter: 4
+Year: 22
+Quarter: 1
 
 Base DIR: D:/Github/kmwtr_log
 Source Image DIR: /img
