@@ -10,7 +10,7 @@ h2{
 	margin-bottom: 1.5em;
 }
 
-img{
+img, video{
 	background-image: url(./transparent_tile.png);
 	width: 240px;
 	height: 180px;
