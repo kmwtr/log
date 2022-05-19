@@ -85,7 +85,7 @@ def image_list(dir_settings: dict) -> dict:
     log.debug('candidate_gif_list: \n' + str(candidate_gif_list))
     log.debug('candidate_mp4_list: \n' + str(candidate_mp4_list))
 
-    image_list_dict = {
+    image_lists_dict = {
         'source_image_list':    source_image_list, 
         'thumbnail_image_list': thumbnail_image_list, 
         'large_img_list':       large_img_list, 
@@ -96,9 +96,9 @@ def image_list(dir_settings: dict) -> dict:
         'candidate_mp4_list':   candidate_mp4_list,
         }
     
-    log.debug('image_list_dict: \n' + str(image_list_dict))
+    #log.debug('image_lists_dict: \n' + str(image_lists_dict))
 
-    return image_list_dict
+    return image_lists_dict
 
 # --------------------------------------------------------------------
 
