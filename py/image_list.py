@@ -7,6 +7,7 @@ from PIL import Image
 import debug_config
 from load_settings import load_settings
 
+# --------------------------------------------------------------------
 
 def file_list_maker(file_extension: str, source_image_list: list) -> list:
     log.debug('-> file_list_maker()')
@@ -43,7 +44,7 @@ def processing_candidate_maker(large_file_list: list, thumbnail_image_list: list
     
     return candidate_list
 
-# -------------------------------------------------
+# --------------------------------------------------------------------
 
 def image_list(dir_settings: dict) -> dict:
     log.debug('-> image_list()')
@@ -67,9 +68,9 @@ def image_list(dir_settings: dict) -> dict:
     mp4_list        = file_list_maker(r'\w+\.mp4', source_image_list)
 
     # 大きい jpg, png, gif, mp4 のリストを作成
-    large_img_list    = large_file_searcher(jpg_png_list, 128000, dir_settings, 0)
-    large_gif_list      = large_file_searcher(gif_list, 512000, dir_settings, 43200) # 240 * 180 を超える場合
-    large_mp4_list      = large_file_searcher(mp4_list, 512000, dir_settings, 0)
+    large_img_list = large_file_searcher(jpg_png_list, 128000, dir_settings, 0)
+    large_gif_list = large_file_searcher(gif_list, 512000, dir_settings, 43200) # 240 * 180 を超える場合
+    large_mp4_list = large_file_searcher(mp4_list, 512000, dir_settings, 0)
 
     log.debug('large_img_list: \n' + str(large_img_list))
     log.debug('large_gif_list: \n' + str(large_gif_list))
@@ -85,21 +86,21 @@ def image_list(dir_settings: dict) -> dict:
     log.debug('candidate_mp4_list: \n' + str(candidate_mp4_list))
 
     image_list_dict = {
-        'source_image_list': source_image_list, 
+        'source_image_list':    source_image_list, 
         'thumbnail_image_list': thumbnail_image_list, 
-        'large_img_list': large_img_list, 
-        'large_gif_list': large_gif_list, 
-        'large_mp4_list': large_mp4_list, 
-        'candidate_img_list': candidate_img_list, 
-        'candidate_gif_list': candidate_gif_list,
-        'candidate_mp4_list': candidate_mp4_list,
+        'large_img_list':       large_img_list, 
+        'large_gif_list':       large_gif_list, 
+        'large_mp4_list':       large_mp4_list, 
+        'candidate_img_list':   candidate_img_list, 
+        'candidate_gif_list':   candidate_gif_list,
+        'candidate_mp4_list':   candidate_mp4_list,
         }
     
     log.debug('image_list_dict: \n' + str(image_list_dict))
 
     return image_list_dict
 
-# -------------------------------------------------
+# --------------------------------------------------------------------
 
 if __name__ == '__main__':
     image_list(load_settings())
