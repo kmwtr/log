@@ -3,6 +3,7 @@ import os
 import subprocess
 from PIL import Image
 import logging as log
+import ffmpeg
 
 import debug_config
 
@@ -23,9 +24,20 @@ def make_image_thumbnail(image_lists: dict, dirs_list: dict):
         # アスペクト比によって別処理
         pixel_width = image_obj.width
         pixel_height = image_obj.height
-        
+        aspect_ratio = round(pixel_width / pixel_height, 1)
+
         if pixel_width > pixel_height:
-            # 横長ならそのままリサイズ
+            # 横長
+            if aspect_ratio < 1.3:
+                # 4:3 よりも正方形に近い場合
+                crop_pix_y = round((pixel_height - ((pixel_width * 3) / 4)) /2)
+                image_obj = image_obj.crop((0, crop_pix_y, pixel_width, pixel_height - crop_pix_y))
+            elif aspect_ratio <= 1.5:
+                # 4:3 と 3:2(1.5:1) の間の場合
+                crop_pix_x = round((pixel_width - ((pixel_height * 4) / 3)) / 2)
+                image_obj = image_obj.crop((crop_pix_x, 0, pixel_width - crop_pix_x, pixel_height))
+            
+            # 横長なら横長としてリサイズ
             image_obj.thumbnail((480, 360), Image.LANCZOS)
         else:
             # 縦長なら正方形にクリッピングしてリサイズ
@@ -60,6 +72,26 @@ def make_image_thumbnail(image_lists: dict, dirs_list: dict):
         os.remove(dirs_list['tmb_img_dir'] + 'intermediate_img.jpg')
 
 
+def make_video_thumbnail_from_gif(image_lists: dict, dirs_list: dict):
+    log.debug('-> make_video_thumbnail_from_gif()')
+    
+    # gif をサムネイル処理する
+    candidate_gif_list = image_lists['candidate_gif_list']
+
+    for i in range(len(candidate_gif_list)): <- 今ここ
+        
+        output_path = dirs_list['tmb_img_dir'] + 'tmb_' + candidate_gif_list[i]
+        log.debug(dirs_list['src_img_dir'] + candidate_gif_list[i])
+        
+        image_obj = Image.open(dirs_list['src_img_dir'] + candidate_gif_list[i])
+
+        # ffmpeg
+        command = ['ffmpeg ','-i',  210106_CG.gif, '-vf', 'scale=480:-1', '-loop', '0', '-r', 12, '-pix_fmt', 'yuv420p']
+
+def make_video_thumbnail(image_lists: dict, dirs_list: dict):
+    log.debug('-> make_video_thumbnail()')
+
+# EOL
 def make_gif_thumbnail(image_lists: dict, dirs_list: dict):
     log.debug('-> make_gif_thumbnail()')
 
@@ -84,11 +116,13 @@ def make_gif_thumbnail(image_lists: dict, dirs_list: dict):
         cp = subprocess.run(['gifsicle','--resize', '240x' + str(resize_height), '--optimize=3', '--colors', '256', '--lossy=40', dirs_list['src_img_dir'] + candidate_gif_list[i], '>', output_path], shell=True, encoding='utf-8', stdout=subprocess.PIPE) # shell=True 重要!
         log.debug(cp)
 
+
 # -------------------------------------------------
 
 if __name__ == '__main__':
     dirs_list = load_settings()
-    image_lists = image_list(dirs_list)
-    make_image_thumbnail(image_lists, dirs_list)
-    make_gif_thumbnail(image_lists, dirs_list)
+    image_lists_dict = image_list(dirs_list)
+    #make_gif_thumbnail(image_lists_dict, dirs_list)
+    make_image_thumbnail(image_lists_dict, dirs_list)
+    make_video_thumbnail(image_lists_dict, dirs_list)
     #os.system('PAUSE')

@@ -10,15 +10,15 @@ import debug_config
 
 from load_settings import load_settings
 from image_list import image_list
-from make_thumbnail import make_image_thumbnail, make_gif_thumbnail
+from make_thumbnail import make_image_thumbnail, make_video_thumbnail
 
 # -------------------------------------------------
 
 settings = load_settings()
-image_lists = image_list(settings)
+image_lists_dict = image_list(settings)
 
-make_image_thumbnail(image_lists, settings)
-make_gif_thumbnail(image_lists, settings)
+make_image_thumbnail(image_lists_dict, settings)
+make_video_thumbnail(image_lists_dict, settings)
 
 
 # 以下未整理
@@ -26,7 +26,7 @@ make_gif_thumbnail(image_lists, settings)
 # 3: html向けの文字列リストを作成
 # -------------------------------------------------
 
-image_lists['source_image_list'].sort(reverse=True)
+image_lists_dict['source_image_list'].sort(reverse=True)
 
 # このクオーターに属するものを抽出する（ひとまずこれで…
 base_num = int((settings['quarter']-1) * 3)
@@ -41,24 +41,24 @@ log.debug('date_code: ' + str(date_code))
 # 今回のクオーター内の名前リストを作成
 image_name_list = [] # 名前のみ
 this_quarter_img_file_list = [] # 拡張子含むファイル名
-for i in range(len(image_lists['source_image_list'])):
-    tmp_file_name = image_lists['source_image_list'][i].split('.')[0]
+for i in range(len(image_lists_dict['source_image_list'])):
+    tmp_file_name = image_lists_dict['source_image_list'][i].split('.')[0]
     if tmp_file_name.startswith(date_code):
         image_name_list.append(tmp_file_name)
-        this_quarter_img_file_list.append(image_lists['source_image_list'][i])
+        this_quarter_img_file_list.append(image_lists_dict['source_image_list'][i])
 
 log.debug('image_name_list: ' + str(image_name_list))
 log.debug('this_quarter_img_file_list: ' + str(this_quarter_img_file_list))
 
 # サムネイルリストを最新の状態に更新
-image_lists['thumbnail_image_list'] = os.listdir(settings['tmb_img_dir'])
+image_lists_dict['thumbnail_image_list'] = os.listdir(settings['tmb_img_dir'])
 
 # htmlに入れたい文字列のリストを取得（差分ではなく毎回まとめて成形する）
 add_list = []
 for i in range(len(image_name_list)):
-    if any( s.startswith(r'tmb_' + image_name_list[i]) for s in image_lists['thumbnail_image_list']):
+    if any( s.startswith(r'tmb_' + image_name_list[i]) for s in image_lists_dict['thumbnail_image_list']):
         # とりあえず簡易的にGIFと突き合わせる
-        if 'tmb_' + image_name_list[i] + '.gif' in image_lists['thumbnail_image_list']:
+        if 'tmb_' + image_name_list[i] + '.gif' in image_lists_dict['thumbnail_image_list']:
             add_list.append(r'tmb_' + image_name_list[i] + r'.gif')
         else:
             add_list.append(r'tmb_' + image_name_list[i] + r'.jpg')
