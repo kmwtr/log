@@ -3,7 +3,6 @@ import os
 import subprocess
 from PIL import Image
 import logging as log
-import ffmpeg
 
 import debug_config
 
@@ -78,18 +77,32 @@ def make_video_thumbnail_from_gif(image_lists: dict, dirs_list: dict):
     # gif をサムネイル処理する
     candidate_gif_list = image_lists['candidate_gif_list']
 
-    for i in range(len(candidate_gif_list)): <- 今ここ
+    for i in range(len(candidate_gif_list)):
         
-        output_path = dirs_list['tmb_img_dir'] + 'tmb_' + candidate_gif_list[i]
-        log.debug(dirs_list['src_img_dir'] + candidate_gif_list[i])
-        
-        image_obj = Image.open(dirs_list['src_img_dir'] + candidate_gif_list[i])
+        source_path = dirs_list['src_img_dir'] + candidate_gif_list[i]
+        target_path = dirs_list['tmb_img_dir'] + 'tmb_' + candidate_gif_list[i]
+        target_path = target_path.replace('.gif', '.mp4')
 
         # ffmpeg
-        command = ['ffmpeg ','-i',  210106_CG.gif, '-vf', 'scale=480:-1', '-loop', '0', '-r', 12, '-pix_fmt', 'yuv420p']
+        option = [
+            'ffmpeg', 
+            '-i', source_path, 
+            '-vf', 'scale=480:-1', 
+            '-r', '12', 
+            '-crf', '25', 
+            '-maxrate', '512K', 
+            '-bufsize', '1M', 
+            '-pix_fmt', 'yuv420p', 
+            '-vcodec', 'libx264', 
+            target_path
+            ]
+        
+        cp = subprocess.run(option, shell=True, encoding='utf-8', stdout=subprocess.PIPE) # shell=True 重要!
+        log.debug(cp)
 
 def make_video_thumbnail(image_lists: dict, dirs_list: dict):
     log.debug('-> make_video_thumbnail()')
+    make_video_thumbnail_from_gif(image_lists, dirs_list)
 
 # EOL
 def make_gif_thumbnail(image_lists: dict, dirs_list: dict):
