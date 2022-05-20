@@ -18,7 +18,8 @@ settings = load_settings()
 image_lists_dict = image_list(settings)
 
 make_image_thumbnail(image_lists_dict, settings)
-make_video_thumbnail(image_lists_dict, settings)
+make_video_thumbnail('candidate_gif_list', image_lists_dict, settings)
+make_video_thumbnail('candidate_mp4_list', image_lists_dict, settings)
 
 
 # 以下未整理

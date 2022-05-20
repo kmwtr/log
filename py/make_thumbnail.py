@@ -71,16 +71,15 @@ def make_image_thumbnail(image_lists: dict, dirs_list: dict):
         os.remove(dirs_list['tmb_img_dir'] + 'intermediate_img.jpg')
 
 
-def make_video_thumbnail_from_gif(image_lists: dict, dirs_list: dict):
-    log.debug('-> make_video_thumbnail_from_gif()')
+def make_video_thumbnail(key_name: str, image_lists: dict, dirs_list: dict):
+    log.debug('-> make_video_thumbnail()')
     
-    # gif をサムネイル処理する
-    candidate_gif_list = image_lists['candidate_gif_list']
+    candidate_file_list = image_lists[key_name]
 
-    for i in range(len(candidate_gif_list)):
+    for i in range(len(candidate_file_list)):
         
-        source_path = dirs_list['src_img_dir'] + candidate_gif_list[i]
-        target_path = dirs_list['tmb_img_dir'] + 'tmb_' + candidate_gif_list[i]
+        source_path = dirs_list['src_img_dir'] + candidate_file_list[i]
+        target_path = dirs_list['tmb_img_dir'] + 'tmb_' + candidate_file_list[i]
         target_path = target_path.replace('.gif', '.mp4')
 
         # ffmpeg
@@ -89,9 +88,9 @@ def make_video_thumbnail_from_gif(image_lists: dict, dirs_list: dict):
             '-i', source_path, 
             '-vf', 'scale=480:-1', 
             '-r', '12', 
-            '-crf', '25', 
-            '-maxrate', '512K', 
-            '-bufsize', '1M', 
+            '-crf', '26', 
+            '-maxrate', '400K', 
+            '-bufsize', '800K', 
             '-pix_fmt', 'yuv420p', 
             '-vcodec', 'libx264', 
             target_path
@@ -100,9 +99,6 @@ def make_video_thumbnail_from_gif(image_lists: dict, dirs_list: dict):
         cp = subprocess.run(option, shell=True, encoding='utf-8', stdout=subprocess.PIPE) # shell=True 重要!
         log.debug(cp)
 
-def make_video_thumbnail(image_lists: dict, dirs_list: dict):
-    log.debug('-> make_video_thumbnail()')
-    make_video_thumbnail_from_gif(image_lists, dirs_list)
 
 # EOL
 def make_gif_thumbnail(image_lists: dict, dirs_list: dict):
@@ -137,5 +133,6 @@ if __name__ == '__main__':
     image_lists_dict = image_list(dirs_list)
     #make_gif_thumbnail(image_lists_dict, dirs_list)
     make_image_thumbnail(image_lists_dict, dirs_list)
-    make_video_thumbnail(image_lists_dict, dirs_list)
+    make_video_thumbnail('candidate_gif_list', image_lists_dict, dirs_list)
+    make_video_thumbnail('candidate_mp4_list', image_lists_dict, dirs_list)
     #os.system('PAUSE')
