@@ -63,6 +63,12 @@ img{
 	height: 180px;
 }
 
+video{
+	background-image: url(./transparent_tile.png);
+	width: 240px;
+	height: 180px;
+}
+
 /* --------------- */
 
 header{
