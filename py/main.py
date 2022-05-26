@@ -99,10 +99,10 @@ def log_assets_processor():
     tmp_list = []
 
     for data in file_database:
-        href_top = '../img/22/'
+        href_top = '../img/' + str(settings['year']) +'/'
         if data[2] == True:
             # サムネイル有り
-            href_top = '../img/tmb/22/'
+            href_top = '../img/tmb/' + str(settings['year']) +'/'
 
         tag_str = ''
         if data[1][1] == '.mp4':
@@ -110,7 +110,7 @@ def log_assets_processor():
         else:
             tag_str = template_obj_image.render(thumbnail_path = href_top + data[1][0] + data[1][1])
 
-        tmp_list.append({'name': data[0][0], 'href': '../img/22/' + data[0][0] + data[0][1], 'tag' : tag_str})
+        tmp_list.append({'name': data[0][0], 'href': '../img/' + str(settings['year']) +'/' + data[0][0] + data[0][1], 'tag' : tag_str})
 
     item_dict['items'] = tmp_list
 
