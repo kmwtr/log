@@ -21,7 +21,7 @@ h1, h2, h3, p, ul, li, a{
 
 h1, h2, h3 {
     color: Black;
-	margin-bottom: 1.0em;
+	margin-bottom: 0.25em;
     padding-bottom: 0.25em;
 }
 
@@ -103,7 +103,7 @@ a:hover {
     grid-template-columns: 240px 240px 240px 240px;
     column-gap: 13px;
     row-gap: 0px;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.0em;
 }
 
 #kusa{
