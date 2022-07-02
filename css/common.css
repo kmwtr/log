@@ -86,6 +86,10 @@ footer{
 
 /* --------------- */
 
+a img, a video{
+	display:block;
+}
+
 a:link {
     color: steelblue;
 }
