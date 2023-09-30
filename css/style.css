@@ -1,3 +1,129 @@
+*{margin:0; padding:0; font-size:100%; font-weight:normal; vertical-align:baseline; background:transparent; border:none;}
+
+/* --------------- */
+
+body{
+	background: White;
+    color: gray;
+	text-align: left;
+	font-family: 'Source Code Pro', monospace;
+	line-height: 1.6em;
+	margin: auto;
+	width: 1000px;
+	padding: 12px;
+}
+
+/* --------------- */
+
+h1, h2, h3, p, ul, li, a{
+	font-weight: normal;
+}
+
+h1, h2, h3 {
+    color: Black;
+	margin-bottom: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+h1{
+    font-size: 160%;
+	border-bottom: 1px black solid;
+}
+
+h2{
+	font-size: 140%;
+	border-bottom: 1px lightgray solid;
+}
+
+h3{
+	font-size: 140%;
+	border-bottom: 1px lightgray dashed;
+}
+
+p, li{
+	font-size: 80%;
+}
+
+ul {
+    margin-left: 1.5em;
+}
+
+hr{
+	height: 1px;
+	border: none;
+	border-top: 1px #b3b3b3 dashed;
+	margin: 0.5em 0;
+}
+
+img{
+	object-fit: contain;
+	object-position: center center;
+	background-image: url(./transparent_tile.png);
+	width: 240px;
+	height: 180px;
+}
+
+video{
+	background-image: url(./transparent_tile.png);
+	width: 240px;
+	height: 180px;
+}
+
+/* --------------- */
+
+header{
+    margin-bottom: 1.0em;
+}
+
+
+article{
+    margin-bottom: 1.0em;
+}
+
+footer{
+	border-top: 1px #b3b3b3 solid;
+}
+
+/* --------------- */
+
+a img, a video{
+	display:block;
+}
+
+a:link {
+    color: steelblue;
+}
+a:visited {
+    color: slategray;
+}
+a:hover {
+    color: lightseagreen;
+}
+
+/* --------------- */
+
+.pickup_images {
+    display: grid;
+    grid-template-columns: 240px 240px 240px 240px;
+    column-gap: 13px;
+    row-gap: 0px;
+	margin-bottom: 1.0em;
+}
+
+#kusa{
+    width: 740px;
+    height: 125px;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#kusa img{
+    background-image: none;
+    width: auto;
+    height: auto;
+}
+
 h2{
 	border-bottom: 1px lightgray dashed;
 }
