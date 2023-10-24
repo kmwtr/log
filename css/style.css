@@ -58,13 +58,13 @@ hr{
 img{
 	object-fit: contain;
 	object-position: center center;
-	background-image: url(./transparent_tile.png);
+	background-image: url(../asset/transparent_tile.png);
 	width: 240px;
 	height: 180px;
 }
 
 video{
-	background-image: url(./transparent_tile.png);
+	background-image: url(../asset/transparent_tile.png);
 	width: 240px;
 	height: 180px;
 }
@@ -137,11 +137,16 @@ h2{
 }
 
 img, video{
-	background-image: url(./transparent_tile.png);
+	background-image: url(../asset/transparent_tile.png);
 	width: 240px;
 	height: 180px;
+}
+
+.pixelated {
+	image-rendering: pixelated;
 }
 
 section{
 	margin-bottom: 0.5em;
 }
+
