@@ -56,7 +56,7 @@ hr{
 }
 
 img{
-	object-fit: contain;
+	object-fit: cover;
 	object-position: center center;
 	background-image: url(../asset/transparent_tile.png);
 	width: 240px;

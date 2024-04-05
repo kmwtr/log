@@ -47,14 +47,14 @@ h3{
 }
 
 img, video{
-    object-fit:         contain;
+    object-fit:         cover;
     object-position:    center center;
-    background-image:   url(../asset/transparent_tile.png);
+    /* background-image:   url(../asset/transparent_tile.png); */
     width:              256px;
     height:             192px;
 }
 
-/* ------------------------------ */
+/* ------------------------------ 
 
 a:link {
     color: #197fb3;
@@ -83,7 +83,7 @@ a:hover {
     height:         192px;
     background-color: #f0f0f0;
 }
-.pickup_images {    
+.pickup_images {
     display:        grid;
     grid-template-columns: 256px 256px 256px 256px;
     column-gap:     0px;
@@ -99,4 +99,9 @@ a:hover {
 
 .pixelated {
     image-rendering: pixelated;
+}
+.no_img {
+    image-rendering:    pixelated;
+    object-fit:         contain;
+    background-image:   url(../asset/transparent_tile.png);
 }
