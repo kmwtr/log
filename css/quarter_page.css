@@ -1,0 +1,16 @@
+.log_images {
+    margin-top:         2.0em;
+    display:            grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap:         0px;
+    row-gap:            1.0em;
+}
+
+/* ------------------------------ */
+
+@media screen and (max-width: 768px) {
+    .log_images {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap:        0.5em;
+    }
+}
