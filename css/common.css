@@ -80,7 +80,7 @@ img, video{
     object-fit:         cover;
     object-position:    center center;
     background-image:   url(../asset/transparent_tile.png);
-    vertical-align: bottom;
+    vertical-align:     bottom;
 }
 
 /* ----------------------------------------------- */
