@@ -1,6 +1,6 @@
 .pickup_images p{
     font-size:              0.75em;
-    line-height:            1.5em;
+    line-height:            1.75em;
 }
 
 img, video{
@@ -13,6 +13,9 @@ img, video{
     
     H2 {
         height:                 32px;
+        margin-bottom:             -32px;
+        z-index: 100;
+        position: relative;
     }
 
     .quarter {    
@@ -22,6 +25,8 @@ img, video{
         height:                 256px;
         column-gap:             0px;
         row-gap:                0px;
+        z-index: 10;
+        position: relative;
     }
 
     .quarter H3{
