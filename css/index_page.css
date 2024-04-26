@@ -10,10 +10,16 @@ img, video{
 /* ------------------------------ */
 
 @media screen and (min-width:769px){
+    
+    H2 {
+        height:                 32px;
+    }
+
     .quarter {    
-        margin-top:             1.0em;
+        margin-top:             0em;
         display:                grid;
         grid-template-columns:  20% 80%;
+        height:                 256px;
         column-gap:             0px;
         row-gap:                0px;
     }
