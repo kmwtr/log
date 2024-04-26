@@ -11,12 +11,9 @@ body::-webkit-scrollbar {
 
 /* ----------------------------------------------- */
 
-:root {
-  --page_width: 1280px;
-}
 
 article{
-    width:          var(--page_width);
+    width:          1280px;
     margin:         0 auto;
 }
 
