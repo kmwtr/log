@@ -31,34 +31,6 @@ footer{
     padding-bottom: 2.0em;
 }
 
-
-@media screen and (max-width: 768px) {
-    article{
-        width:          auto;
-    }
-    header{
-        padding-top:    1.5em;
-        padding-bottom: 1.5em;
-        border-bottom:  1px black solid;
-        margin-bottom:  1.5em;
-    }
-    footer{
-        margin-top:     1.5em;
-        border-top:     1px black solid;
-        padding-top:    1.5em;
-        padding-bottom: 1.5em;
-    }
-    h1, h2, h3 {
-        font-size:      1.5em;
-        padding-left:   0.5em;
-    }
-    p {
-        padding-left:   0.25em;
-    }
-}
-
-/* ----------------------------------------------- */
-
 h1, h2, h3, p, ul, li, a{
     font-weight:    300;
 }
@@ -78,6 +50,37 @@ img, video{
     object-position:    center center;
     background-image:   url(../asset/transparent_tile.png);
     vertical-align:     bottom;
+}
+
+/* ----------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    article{
+        width:          auto;
+    }
+    
+    header{
+        padding-top:    1.5em;
+        padding-bottom: 1.5em;
+        border-bottom:  1px black solid;
+        margin-bottom:  1.5em;
+    }
+    
+    footer{
+        margin-top:     1.5em;
+        border-top:     1px black solid;
+        padding-top:    1.5em;
+        padding-bottom: 1.5em;
+    }
+    
+    h1, h2, h3 {
+        font-size:      1.5em;
+        padding-left:   0.5em;
+    }
+    
+    p {
+        padding-left:   0.25em;
+    }
 }
 
 /* ----------------------------------------------- */
