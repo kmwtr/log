@@ -3,6 +3,7 @@
     padding-top:    0.5em;
     padding-left:   0.5em;
     line-height:    1.0em;
+    color:          #ffffff;
 }
 
 .pickup_images p a:link {
@@ -19,7 +20,7 @@
 /* PC ------------------------------ */
 
 @media screen and (min-width:769px){
-    H2 {
+    h2 {
         height:                 2em;
         margin-bottom:          -2em;
         line-height:            1em;
@@ -40,7 +41,7 @@
         background-color:       #d0d0d0;
     }
 
-    .quarter H3{
+    .quarter h3{
         display:                grid;
         place-content:          center;
         aspect-ratio:           4 / 3;
@@ -55,14 +56,13 @@
         height:                 240px;
         margin-bottom:          16px;
         background-color:       #282828;
-        color:                  #ffffff;
     }
 }
 
 /* Mobile ------------------------------ */
 
 @media screen and (max-width: 768px) {
-    H2 {
+    h2 {
         padding-top:            0.5em;
         padding-bottom:         0.5em;
     }
@@ -71,7 +71,7 @@
         background-color:       #f0f0f0;
     }
 
-    .quarter H3{
+    .quarter h3{
         padding-top:            0.5em;
         padding-bottom:         0.5em;
     }
