@@ -1,4 +1,10 @@
-.log_images p{
+.log_images {
+    display:        grid;
+    column-gap:     0px;
+    row-gap:        0px;
+}
+
+.log_images p {
     font-size:      0.75em;
     padding-top:    0.5em;
     padding-left:   0.5em;
@@ -6,32 +12,15 @@
     color:          #ffffff;
 }
 
-.log_images p a:link {
-    color:          #4dc3ff;
-}
-.log_images p a:visited {
-    color:          #4ca4fc;
-}
-.log_images p a:hover {
-    color:          #40dfff;
-    cursor:         pointer;
-}
+/* PC -------------------------------------------------- */
 
-.log_images{
-    display:        grid;
-    column-gap:     0px;
-    row-gap:        0px;
-}
-
-/* PC ------------------------------ */
-
-@media screen and (min-width:769px){
+@media screen and (min-width:769px) {
     .log_images {
         grid-template-columns:  repeat(5, 20%);
         grid-auto-rows:         256px;
-        background-color:       #282828;
+        background-color:       #202020;
     }
-    .log_images h2{
+    .log_images h2 {
         aspect-ratio:           4 / 3;
         background-color:       #f0f0f0;
         line-height:            1em;
@@ -39,8 +28,7 @@
     }
 }
 
-
-/* Mobile ------------------------------ */
+/* Mobile ---------------------------------------------- */
 
 @media screen and (max-width: 768px) {
     .log_images {
@@ -49,10 +37,10 @@
     }
     .log_images h2 {
         background-color:       #f0f0f0;
-        padding:                0.5em;
+        padding:                1.0em;
     }
     .log_images section {
         aspect-ratio:           1;
-        background-color:       #282828;
+        background-color:       #202020;
     }
 }

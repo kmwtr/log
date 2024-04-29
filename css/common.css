@@ -1,49 +1,56 @@
-body{
-    font-family:    "Source Code Pro", "Zen Maru Gothic", monospace;
-    font-size:      16px;
-    font-weight:    300;
-    line-height:    1.5em;
+* {
+    font-family:        "Source Code Pro", "Zen Maru Gothic", monospace;
+    font-weight:        300;
+    box-sizing:         border-box;
+}
+
+/* ----------------------------------------------------- */
+
+body {
+    font-size:          16px;
+    line-height:        1.5em;
+    margin:             0;
+    padding:            0;
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
 
-/* ----------------------------------------------- */
-
-
-article{
-    width:          1280px;
-    margin:         0 auto;
+article {
+    width:              1280px;
+    margin:             0 auto;
 }
 
-header{
-    padding-top:    2.0em;
-    padding-bottom: 1.0em;
-    border-bottom:  1px black solid;
-    margin-bottom:  2.0em;
+header {
+    padding-top:        2.0em;
+    padding-bottom:     1.0em;
+    border-bottom:      1px black solid;
+    margin-bottom:      3.0em;
 }
 
-footer{
-    margin-top:     2.0em;
-    border-top:     1px black solid;
-    padding-top:    1.0em;
-    padding-bottom: 2.0em;
+.bold {
+    font-weight:        500;
 }
 
-h1, h2, h3, p, ul, li, a{
-    font-weight:    300;
+footer {
+    margin-top:         3.0em;
+    border-top:         1px black solid;
+    padding-top:        1.0em;
+    padding-bottom:     2.0em;
 }
 
-h1{
-    font-size:      1.0em;
+/* ----------------------------------------------------- */
+
+h1 {
+    font-size:          1.0em;
 }
 
-h2, h3{
-    font-size:      1.5em;
+h2, h3 {
+    font-size:          1.5em;
 }
 
-img, video{
+img, video {
     width:              100%;
     aspect-ratio:       4 / 3;
     object-fit:         cover;
@@ -54,44 +61,63 @@ img, video{
 
 /* ----------------------------------------------- */
 
+a:link {
+    color:      #197fb3;
+}
+
+a:visited {
+    color:      #134c86;
+}
+
+a:hover {
+    color:      #20bfdf;
+    cursor:     pointer;
+}
+
+.pickup_images p a:link {
+    color:      #4dc3ff;
+}
+.pickup_images p a:visited {
+    color:      #4ca4fc;
+}
+.pickup_images p a:hover {
+    color:      #40dfff;
+    cursor:     pointer;
+}
+
+/* ----------------------------------------------- */
+
 @media screen and (max-width: 768px) {
-    article{
+    article {
         width:          auto;
     }
     
-    header{
+    header {
         padding-top:    1.5em;
         padding-bottom: 1.5em;
         border-bottom:  1px black solid;
         margin-bottom:  1.5em;
     }
     
-    footer{
+    footer {
         margin-top:     1.5em;
         border-top:     1px black solid;
         padding-top:    1.5em;
         padding-bottom: 1.5em;
     }
     
-    h1 {
+    h1, h2, h3 {
         font-size:      1.25em;
-        padding-left:   1.0em;
-    }
-    h2, h3 {
-        font-size:      1.5em;
-        padding-left:   1.0em;
+        padding:        0 1.0em;
     }
     
-    p {
-        padding-left:   0.25em;
+    .pickup_images p{
+        font-size:              0.7em;
+        padding-left:           0.3em;
     }
 }
 
 /* ----------------------------------------------- */
-
-.bold {
-    font-weight:        500;
-}
 
 .pixelated {
     image-rendering:    pixelated;
@@ -102,24 +128,9 @@ img, video{
     background-image:   url(../asset/transparent_tile.png);
 }
 
-.no_img img{
+.no_img img {
     image-rendering:    pixelated;
     aspect-ratio:       1;
     width:              64px;
     height:             auto;
-}
-
-
-/* ----------------------------------------------- */
-
-a:link {
-    color: #197fb3;
-}
-a:visited {
-    color: #134c86
-    ;
-}
-a:hover {
-    color: #20bfdf;
-    cursor: pointer;
 }

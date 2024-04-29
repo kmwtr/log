@@ -6,18 +6,7 @@
     color:          #ffffff;
 }
 
-.pickup_images p a:link {
-    color:          #4dc3ff;
-}
-.pickup_images p a:visited {
-    color:          #4ca4fc;
-}
-.pickup_images p a:hover {
-    color:          #40dfff;
-    cursor:         pointer;
-}
-
-/* PC ------------------------------ */
+/* PC -------------------------------------------------- */
 
 @media screen and (min-width:769px){
     h2 {
@@ -55,25 +44,24 @@
         row-gap:                0px;
         height:                 240px;
         margin-bottom:          16px;
-        background-color:       #282828;
+        background-color:       #202020;
     }
 }
 
-/* Mobile ------------------------------ */
+/* Mobile ---------------------------------------------- */
 
 @media screen and (max-width: 768px) {
     h2 {
-        padding-top:            0.5em;
-        padding-bottom:         0.5em;
+        background-color:       #f0f0f0;
+        margin:                 1em 0;
     }
 
     .quarter {
-        background-color:       #f0f0f0;
+        background-color:       #ffffff;
     }
 
     .quarter h3{
-        padding-top:            0.5em;
-        padding-bottom:         0.5em;
+        margin:                 1em 0;
     }
     
     .pickup_images {
@@ -83,11 +71,7 @@
         grid-template-rows:     50% 50%;
         column-gap:             0px;
         row-gap:                0px;
-        background-color:       #282828;
+        background-color:       #202020;
         color:                  #ffffff;
-    }
-    
-    .pickup_images p{
-        font-size:      0.6em;
     }
 }
