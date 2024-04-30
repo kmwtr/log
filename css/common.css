@@ -23,14 +23,23 @@ article {
 }
 
 header {
-    padding-top:        2.0em;
-    padding-bottom:     1.0em;
-    border-bottom:      1px black solid;
-    margin-bottom:      3.0em;
+    padding-top:            2.0em;
+    padding-bottom:         1.0em;
+    border-bottom:          1px black solid;
+    margin-bottom:          3.0em;
+    display:                grid;
+    grid-template-columns:  75% 25%;
 }
 
 .bold {
     font-weight:        500;
+}
+
+#logo {
+    justify-self:       end;
+    padding-right:      0.5em;
+    margin-bottom:      -2.0em;
+    background-image:   none;
 }
 
 footer {
@@ -50,7 +59,7 @@ h2, h3 {
     font-size:          1.5em;
 }
 
-img, video {
+.pickup_images img, video {
     width:              100%;
     aspect-ratio:       4 / 3;
     object-fit:         cover;
@@ -112,8 +121,8 @@ a:hover {
     }
     
     .pickup_images p{
-        font-size:              0.7em;
-        padding-left:           0.3em;
+        font-size:      0.7em;
+        padding-left:   0.3em;
     }
 }
 
@@ -133,4 +142,12 @@ a:hover {
     aspect-ratio:       1;
     width:              64px;
     height:             auto;
+}
+
+/* Mobile ---------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    #logo {
+        margin-top:             -0.1em;
+    }
 }
