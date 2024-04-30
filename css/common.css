@@ -103,7 +103,7 @@ a:hover {
     cursor:     pointer;
 }
 
-/* ----------------------------------------------- */
+/* Mobile ---------------------------------------------- */
 
 @media screen and (max-width: 768px) {
     article {
@@ -133,6 +133,9 @@ a:hover {
         font-size:      0.7em;
         padding-left:   0.3em;
     }
+    #logo {
+        margin-top:             -0.2em;
+    }
 }
 
 /* ----------------------------------------------- */
@@ -151,12 +154,4 @@ a:hover {
     aspect-ratio:       1;
     width:              64px;
     height:             auto;
-}
-
-/* Mobile ---------------------------------------------- */
-
-@media screen and (max-width: 768px) {
-    #logo {
-        margin-top:             -0.2em;
-    }
 }

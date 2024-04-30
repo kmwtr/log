@@ -74,4 +74,8 @@
         background-color:       #202020;
         color:                  #ffffff;
     }
+    .pickup_images p{
+        font-size:      0.7em;
+        padding-left:   0.3em;
+    }
 }
