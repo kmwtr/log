@@ -3,7 +3,6 @@
     padding-top:    0.5em;
     padding-left:   0.5em;
     line-height:    1.0em;
-    color:          #ffffff;
 }
 
 /* PC -------------------------------------------------- */
@@ -26,15 +25,14 @@
         z-index:                10;
         position:               relative;
         height:                 240px;
-        margin-bottom:          16px;
-        background-color:       #d0d0d0;
     }
 
     .quarter h3{
         display:                grid;
         place-content:          center;
         aspect-ratio:           4 / 3;
-        background-color:       #f0f0f0;
+        background-image:       url(../asset/dot_tile.png);
+        image-rendering:        pixelated;
     }
 
     .pickup_images {
@@ -44,7 +42,6 @@
         row-gap:                0px;
         height:                 240px;
         margin-bottom:          16px;
-        background-color:       #202020;
     }
 }
 
