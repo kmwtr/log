@@ -32,6 +32,7 @@
         place-content:          center;
         aspect-ratio:           4 / 3;
         background-image:       url(../asset/dot_tile.png);
+        background-size:        16px 16px;
         image-rendering:        pixelated;
     }
 

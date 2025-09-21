@@ -147,11 +147,12 @@ a:hover {
 .no_img {
     aspect-ratio:       4 / 3;
     background-image:   url(../asset/transparent_tile.png);
+    background-size:    16px 16px;
+    image-rendering:    pixelated;
 }
 
 .no_img img {
-    image-rendering:    pixelated;
     aspect-ratio:       1;
     width:              64px;
-    height:             auto;
+    height:             64px;
 }
