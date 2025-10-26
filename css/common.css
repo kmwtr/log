@@ -77,6 +77,10 @@ h2, h3 {
     vertical-align:     bottom;
 }
 
+.log_images .fit_fill{
+    object-fit: fill;
+}
+
 /* ----------------------------------------------- */
 
 a:link {
