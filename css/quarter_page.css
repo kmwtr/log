@@ -51,30 +51,29 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    header, main, footer {
+        width:              auto;
+    }
     header {
-        padding:            4.0em 0 4.0em 0;
+        padding:            1.5em 0 1.5em 0;
         margin-bottom:      0;
         
         h1 {
-            font-size:      4.0em;
-            line-height:    1.5em;
+            font-size:      1.25em;
             padding-left:   0.5em;
         }
     }
 
     #logo {
-        margin-right:       2.0em;
+        margin-right:       1.0em;
         height:             100%;
         width:              auto;
     }
     
     footer {
         margin-top:         0;
-        padding:            2.0em 0 6.0em 0;
         
         p {
-            font-size:      3.0em;
-            line-height:    1.5em;
             padding-left:   0.5em;
         }
     }   
@@ -127,17 +126,14 @@ h2, h3 {
 
 @media screen and (max-width: 768px) {
     .quarter_group {
+        
         grid-template-columns:  repeat(2, 50%);
         
         .quarter_title {
-            font-size:          4.0em;
-            background-size:    48px;
-        }
-        img, video {
-            background-size:    48px;
+            font-size:          1.5em;
         }
         figcaption {
-            font-size:          3.0em;
+            font-size:          1.0em;
             line-height:        1.5em;
         }
     }
