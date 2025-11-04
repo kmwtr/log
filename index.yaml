@@ -1,0 +1,121 @@
+2025:
+  - Q4: []
+  
+  - Q3: []
+  
+  - Q2:
+    - file_name:  250508_2977.jpg
+      thumbnail:  True
+      caption:    ''
+  
+  - Q1:
+    - file_name:  250104_132.jpg
+      thumbnail:  True
+      caption:    ''
+
+# ----------------------------------------------------------
+
+2024:
+  - Q4: []
+  
+  - Q3:
+    - file_name:  240802_1163.jpg
+      thumbnail:  True
+      caption:    ''
+  
+  - Q2:
+    - file_name:  240430.jpg
+      thumbnail:  True
+      caption:    'Manga/Anime Hairstyles v1.0.1'
+    
+    - file_name:  240429_B.png
+      thumbnail:  True
+      caption:    'log site design update'
+    
+    - file_name:  240429_A.png
+      thumbnail:  False
+      caption:    'my info site design update'
+    
+    - file_name:  240407_0170.jpg
+      thumbnail:  True
+      caption:    ''
+  
+  - Q1:
+    - file_name:  240310_P.jpg
+      thumbnail:  True
+      caption:    ''
+    
+    - file_name:  240229.jpg
+      thumbnail:  True
+      caption:    'Manga/Anime Hairstyles v0.9.1'
+
+# ----------------------------------------------------------
+
+2023:
+  - Q4:
+    - file_name:  231230.jpg
+      thumbnail:  False
+      caption:    'Screenshot Formatter v0.2.0'
+
+  - Q3:
+    - file_name:  230719_SP5.jpg
+      thumbnail:  True
+      caption:    'Lowpoly dummy: TT-HL8'
+
+    - file_name:  230718.jpg
+      thumbnail:  True
+      caption:    'Paper clay trees'
+
+  - Q2: 
+    - file_name:  230527_SP5.jpg
+      thumbnail:  False
+      caption:    'Lowpoly dummy: LD_WP_HK-VP9'
+
+    - file_name:  230516_MM.jpg
+      thumbnail:  True
+      caption:    'MM KP Prototypes'
+
+    - file_name:  230430_SP5.jpg
+      thumbnail:  True
+      caption:    'Minimal human rig v1.1.1'
+
+    - file_name:  230428_4689.jpg
+      thumbnail:  True
+      caption:    'Camera grip'
+
+  - Q1: 
+    - file_name:  230331_SP5_2.mp4
+      thumbnail:  True
+      caption:    'Lowpoly human (skinned)'
+
+    - file_name:  230331_SP5_1.jpg
+      thumbnail:  True
+      caption:    'Minimal human rig v1.0.0'
+
+    - file_name:  230307_NS7.png
+      thumbnail:  False
+      caption:    '3-bit Color palette'
+
+    - file_name:  230303_KP.png
+      thumbnail:  False
+      caption:    'KeyPaddle PCB v0.1.0'
+
+# ----------------------------------------------------------
+
+2022:
+  - Q1:
+    - file_name:  220324_MQ.jpg
+      thumbnail:  True
+      caption:    'Lowpoly dummy: F-35A'
+
+    - file_name:  220305_MMI.jpg
+      thumbnail:  False
+      caption:    'Man machine interface'
+
+    - file_name:  220302_3242.jpg
+      thumbnail:  True
+      caption:    'Sea'
+
+    - file_name:  220125_2554.jpg
+      thumbnail:  True
+      caption:    'Tobacco shop'
