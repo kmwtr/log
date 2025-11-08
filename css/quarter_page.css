@@ -100,6 +100,7 @@ h2, h3 {
         background-image:   url(../asset/dot_tile.png);
         background-size:    16px;
         image-rendering:    pixelated;
+        text-align:         center;
     }
 
     figure {
