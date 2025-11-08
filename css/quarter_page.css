@@ -25,7 +25,7 @@ header, main, footer {
 header {
     padding:                2.0em 0 1.0em 0;
     border-bottom:          1px black solid;
-    margin-bottom:          3.0em;
+    margin-bottom:          2.0em;
     display:                grid;
     grid-template-columns:  80% 20%;
 }
