@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!-- ------------------------------------------------------------------------------------------- -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
     <link rel="icon" href="./asset/favicon-32.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500&family=Zen+Maru+Gothic&display=swap">
     <link rel="stylesheet" href="./css/reset.min.css">
-    <link rel="stylesheet" href="./css/index_page.css">
+    <link rel="stylesheet" href="./css/quarter_page.css">
 </head>
-<!-- ------------------------------------------------------------------------------------------- -->
+
 <body>
     <header>
         <h1>(<a href="https://prj.kmwtr.xyz/">prj</a>|<span class="bold">log</span>|<a href="https://doc.kmwtr.xyz/">doc</a>).<a href="https://kmwtr.xyz/">kmwtr</a>.xyz</h1>
@@ -18,24 +18,22 @@
     </header>
     <main>
         <article>
-            {%- for item in items %}
+            {%- for q_group in quarter_group %}
             <section class="quarter_group">
                 <div class="quarter_title">
-                    <h2>{{ h2 }}</h2 alt="{{ h2_alt }}">
-                    <h3><a href="{{ quarter_page.href }}">{{ h3 }}</a></h3>
+                    <h2>{{ q_group.h2 }}</h2 alt="{{ q_group.h2_alt }}">
+                    <h3><a href="{{ q_group.q_page_href }}">{{ q_group.h3 }}</a></h3>
                 </div>
-                <figure><a href="{{ item.href }}">{{ item.tag }}</a><figcaption>{{ item.name }}</figcaption></figure>
-                <figure><a href="{{ item.href }}">{{ item.tag }}</a><figcaption>{{ item.name }}</figcaption></figure>
-                <section class="no_img"><img src="./asset/no_img.png"></section>
-                <section class="no_img"><img src="./asset/no_img.png"></section>
+                {%- for item in q_group.content %}
+                {{ item  }}
+                {%- endfor %}
             </section>
             {%- endfor %}
-            <footer>
-                <p>&copy; 2019- 上 航, kmwtr</p>
-            </footer>
-
         </article>
     </main>
+    <footer>
+        <p>&copy; 2019- 上 航, kmwtr</p>
+    </footer>
 </body>
-<!-- ------------------------------------------------------------------------------------------- -->
+
 </html>

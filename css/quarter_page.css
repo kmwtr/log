@@ -7,14 +7,13 @@
 /* header, main, footer */
 /* ------------------------------------------------------ */
 
-body {
-    font-size:          16px;
-    line-height:        1.5em;
+html {
     scrollbar-width:    none;
 }
 
-body::-webkit-scrollbar {
-    display:    none;
+body {
+    font-size:          16px;
+    line-height:        1.5em;
 }
 
 header, main, footer {
@@ -87,6 +86,16 @@ h2, h3 {
     font-size:  1.5em;
 }
 
+h2 {
+    text-align: left;
+    height:     0em;
+    padding-left: 1.0em;
+}
+
+h3 {
+    text-align: center;
+}
+
 .quarter_group {
     display:                grid;
     column-gap:             0px;
@@ -94,20 +103,19 @@ h2, h3 {
     grid-template-columns:  repeat(5, 256px);
 
     .quarter_title {
-        display:            grid;
-        place-content:      center;
         aspect-ratio:       4 / 3;
         background-image:   url(../asset/dot_tile.png);
         background-size:    16px;
         image-rendering:    pixelated;
-        text-align:         center;
+        align-content:      center;
     }
-
+    
     figure {
         aspect-ratio:       1;
     }
 
     img, video {
+        display: block; /* または display: inline-block; */
         width:              100%;
         aspect-ratio:       4 / 3;
         object-fit:         cover;
@@ -118,6 +126,7 @@ h2, h3 {
     
     figcaption {
         font-size:          0.75em;
+        line-height:        1.5em;
         padding:            0.5em 0 0 0.5em;
     }
 }
@@ -126,22 +135,35 @@ h2, h3 {
     image-rendering:    pixelated;
 }
 
+.no_img {
+    aspect-ratio:       4 / 3;
+    background-image:   url(../asset/dot_tile.png);
+    background-size:    16px;
+    image-rendering:    pixelated;
+    align-content:      center;
+    
+    img{
+        object-fit:     contain;
+        height:         128px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     h2, h3 {
-        font-size:  1.25em;
+        align-content:      center;
     }
-
     .quarter_group {
         grid-template-columns:  repeat(2, 50%);
         
         .quarter_title {
-            font-size:          1.5em;
-            background-size:    14px;
-        }
-
-        figcaption {
+            grid-column:        span 2;
+            aspect-ratio:       10 / 1;
             font-size:          1.0em;
-            line-height:        1.5em;
+            margin-bottom:      1em;
+        }
+        
+        figcaption {
+            line-height:        1.25em;
             text-align:         center;
             padding:            0;
         }

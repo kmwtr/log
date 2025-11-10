@@ -1,262 +1,262 @@
 2025:
 # ----------------------------------------------------------
-  - Q4: []
+  Q4: []
 
-  - Q3: []
+  Q3: []
 
-  - Q2:
-    - file_name:  250508_2977
+  Q2:
+    - file_name:  '250508_2977'
       caption:    ''
 
-  - Q1:
-    - file_name:  250104_132
+  Q1:
+    - file_name:  '250104_132'
       caption:    ''
 
 2024:
 # ----------------------------------------------------------
-  - Q4: []
+  Q4: []
   
-  - Q3:
-    - file_name:  240802_1163
+  Q3:
+    - file_name:  '240802_1163'
       caption:    ''
   
-  - Q2:
-    - file_name:  240430
+  Q2:
+    - file_name:  '240430'
       caption:    'Manga/Anime Hairstyles v1.0.1'
 
-    - file_name:  240429_B
+    - file_name:  '240429_B'
       caption:    'log site design update'
 
-    - file_name:  240429_A
+    - file_name:  '240429_A'
       caption:    'my info site design update'
 
-    - file_name:  240407_0170
+    - file_name:  '240407_0170'
       caption:    ''
   
-  - Q1:
-    - file_name:  240310_P
+  Q1:
+    - file_name:  '240310_P'
       caption:    ''
 
-    - file_name:  240229
+    - file_name:  '240229'
       caption:    'Manga/Anime Hairstyles v0.9.1'
 
 2023:
 # ----------------------------------------------------------
-  - Q4:
-    - file_name:  231230
+  Q4:
+    - file_name:  '231230'
       caption:    'Screenshot Formatter v0.2.0'
 
-  - Q3:
-    - file_name:  230719_SP5
+  Q3:
+    - file_name:  '230719_SP5'
       caption:    'Lowpoly dummy: TT-HL8'
 
-    - file_name:  230718
+    - file_name:  '230718'
       caption:    'Paper clay trees'
 
-  - Q2: 
-    - file_name:  230527_SP5
+  Q2: 
+    - file_name:  '230527_SP5'
       caption:    'Lowpoly dummy: LD_WP_HK-VP9'
 
-    - file_name:  230516_MM
+    - file_name:  '230516_MM'
       caption:    'MM KP Prototypes'
 
-    - file_name:  230430_SP5
+    - file_name:  '230430_SP5'
       caption:    'Minimal human rig v1.1.1'
 
-    - file_name:  230428_4689
+    - file_name:  '230428_4689'
       caption:    'Camera grip'
 
-  - Q1: 
-    - file_name:  230331_SP5_2
+  Q1: 
+    - file_name:  '230331_SP5_2'
       caption:    'Lowpoly human (skinned)'
 
-    - file_name:  230331_SP5_1
+    - file_name:  '230331_SP5_1'
       caption:    'Minimal human rig v1.0.0'
 
-    - file_name:  230307_NS7
+    - file_name:  '230307_NS7'
       caption:    '3-bit Color palette'
 
-    - file_name:  230303_KP
+    - file_name:  '230303_KP'
       caption:    'KeyPaddle PCB v0.1.0'
 
 2022:
 # ----------------------------------------------------------
-  - Q4:
-    - file_name:  221222_KN
+  Q4:
+    - file_name:  '221222_KN'
       caption:    'Sawagani pack'
 
-    - file_name:  221113_2
+    - file_name:  '221113_2'
       caption:    'Lens hood (77mm threads)'
 
-    - file_name:  221109_KN
+    - file_name:  '221109_KN'
       caption:    'Lowpoly dummy: A_KN_S'
       
-    - file_name:  221105
+    - file_name:  '221105'
       caption:    'SBC case fan'
 
-  - Q3:
-    - file_name:  220928_KN
+  Q3:
+    - file_name:  '220928_KN'
       caption:    'Kani'
 
-    - file_name:  220818
+    - file_name:  '220818'
       caption:    'Hook'
 
-    - file_name:  220714
+    - file_name:  '220714'
       caption:    'Phone lens protector'
       
-    - file_name:  220702_SP5
+    - file_name:  '220702_SP5'
       caption:    'Lowpoly dummy: DK_200L'
 
-  - Q2:
-    - file_name:  220630_SP5
+  Q2:
+    - file_name:  '220630_SP5'
       caption:    'Minimal human rig v0.9.0'
 
-    - file_name:  220601_LPD
+    - file_name:  '220601_LPD'
       caption:    'Lowpoly dummy: T-HA2'
 
-    - file_name:  220430_HS
+    - file_name:  '220430_HS'
       caption:    'DC cable reel'
       
-    - file_name:  220401_SP5
+    - file_name:  '220401_SP5'
       caption:    'Lowpoly human'
 
-  - Q1:
-    - file_name:  220324_MQ
+  Q1:
+    - file_name:  '220324_MQ'
       caption:    'Lowpoly dummy: F-35A'
 
-    - file_name:  220305_MMI
+    - file_name:  '220305_MMI'
       caption:    'Man machine interface'
 
-    - file_name:  220302_3242
+    - file_name:  '220302_3242'
       caption:    'Sea'
 
-    - file_name:  220125_2554
+    - file_name:  '220125_2554'
       caption:    'Tobacco shop'
 
 2021:
 # ----------------------------------------------------------
-  - Q4:
-    - file_name:  211231_S
+  Q4:
+    - file_name:  '211231_S'
       caption:    'LCD control by RK3308 VOP'
       
-    - file_name:  211224_S
+    - file_name:  '211224_S'
       caption:    'LCD control by RK3308 VOP'
       
-    - file_name:  211122_MMI
+    - file_name:  '211122_MMI'
       caption:    'MMI PCB v0.4.0'
       
-    - file_name:  211023_S
+    - file_name:  '211023_S'
       caption:    'CPU/LCD module PCB v0.2.3'
   
-  - Q3:
-    - file_name:  210914_SP4B
+  Q3:
+    - file_name:  '210914_SP4B'
       caption:    'Gaze-M'
       
-    - file_name:  210901_SP4G
+    - file_name:  '210901_SP4G'
       caption:    'Gaze-F'
       
-    - file_name:  210725_SP3
+    - file_name:  '210725_SP3'
       caption:    'The footage [vimeo]'
       url:        'https://vimeo.com/578983815'
       
-    - file_name:  210711_SP3
+    - file_name:  '210711_SP3'
       caption:    'Off limit'
   
-  - Q2:
-    - file_name:  210522_S
+  Q2:
+    - file_name:  '210522_S'
       caption:    'Make CPU/LCD module samples'
       
-    - file_name:  210512_S
+    - file_name:  '210512_S'
       caption:    'Rework'
       
-    - file_name:  210506_SP2
+    - file_name:  '210506_SP2'
       caption:    'Martial law'
       
-    - file_name:  210505_SP2
+    - file_name:  '210505_SP2'
       caption:    'Martial law'
   
-  - Q1:
-    - file_name:  210228
+  Q1:
+    - file_name:  '210228'
       caption:    'Tateyama'
       
-    - file_name:  210220
+    - file_name:  '210220'
       caption:    'Ancient machine x2'
       
-    - file_name:  210210_TST
+    - file_name:  '210210_TST'
       caption:    'Study'
       
-    - file_name:  210106_CG
+    - file_name:  '210106_CG'
       caption:    'Personal test project [vimeo]'
       url:        'https://vimeo.com/496558669'
 
 2020:
 # ----------------------------------------------------------
-  - Q4:
-    - file_name:  201228_2DCG
+  Q4:
+    - file_name:  '201228_2DCG'
       caption:    'doodle'
 
-    - file_name:  201213
+    - file_name:  '201213'
       caption:    'Dry flower'
 
-    - file_name:  201101_DEV2
+    - file_name:  '201101_DEV2'
       caption:    'Handheld PC Rev.P (Back)'
 
-    - file_name:  201101_DEV1
+    - file_name:  '201101_DEV1'
       caption:    'Handheld PC Rev.P (Front)'
 
-  - Q3:
-    - file_name:  200917_FLM
+  Q3:
+    - file_name:  '200917_FLM'
       caption:    'CURE (1997)'
 
-    - file_name:  200913_FLM
+    - file_name:  '200913_FLM'
       caption:    'No Country for Old Men (2007)'
 
-    - file_name:  200803_PF
+    - file_name:  '200803_PF'
       caption:    'Original monospaced font'
       url:        'https://kmwtr.github.io/Barecast/'
 
-    - file_name:  200701_BHTA
+    - file_name:  '200701_BHTA'
       caption:    'Personal test project [vimeo]'
       url:        'https://vimeo.com/434289576'
 
-  - Q2:
-    - file_name:  200616_ADV
+  Q2:
+    - file_name:  '200616_ADV'
       caption:    'Z.N. (Short Anime)[vimeo]'
       url:        'https://vimeo.com/404486903'
 
-    - file_name:  200511_BHTA
+    - file_name:  '200511_BHTA'
       caption:    'Test project, Design (Back)'
 
-    - file_name:  200508_BHTA
+    - file_name:  '200508_BHTA'
       caption:    'Test project, Design (Front)'
 
-    - file_name:  200423_LoB
+    - file_name:  '200423_LoB'
       caption:    'Next project'
 
-  - Q1:
-    - file_name:  200216
+  Q1:
+    - file_name:  '200216'
       caption:    'DIY iPad drawing board'
 
-    - file_name:  200128_PF
+    - file_name:  '200128_PF'
       caption:    'Font inspired by PCB'
 
-    - file_name:  200111_CT
+    - file_name:  '200111_CT'
       caption:    'STM32 board with USB-C Rev.P2'
 
-    - file_name:  200111_CK
+    - file_name:  '200111_CK'
       caption:    'Handheld keyboard Rev.P'
 
 2019:
 # ----------------------------------------------------------
-  - Q4:
-    - file_name:  191215_ADV2
+  Q4:
+    - file_name:  '191215_ADV2'
       caption:    'Photo based material (Grass)'
 
-    - file_name:  191215_ADV1
+    - file_name:  '191215_ADV1'
       caption:    'Photo based material (Soil)'
 
-    - file_name:  191213_ADV
+    - file_name:  '191213_ADV'
       caption:    'Photo based material (Asphalt)'
 
-    - file_name:  191109_CT
+    - file_name:  '191109_CT'
       caption:    'STM32 board with USB-C Rev.P'
